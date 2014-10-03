@@ -11,6 +11,12 @@
 			<artifactId>validation-api</artifactId>
 			<version>1.0.0.GA</version>
 		</dependency>
+	
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-EL</artifactId>
+			<version>LATEST</version>
+		</dependency>
 	</dependencies>
 
 	<!-- DECLARAÇÃO DE REPOSITÓRIO PARA BAIXAR AS BIBLIOTECAS DO ANTEROS NO 
