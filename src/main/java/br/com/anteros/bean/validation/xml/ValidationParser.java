@@ -30,16 +30,11 @@ import javax.validation.MessageInterpolator;
 import javax.validation.TraversableResolver;
 import javax.validation.ValidationException;
 import javax.validation.spi.ValidationProvider;
-import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
 
-import org.xml.sax.SAXException;
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.core.Persister;
+import org.simpleframework.xml.stream.Format;
 
 import br.com.anteros.bean.validation.ConfigurationImpl;
 import br.com.anteros.bean.validation.util.PrivilegedActions;
@@ -47,7 +42,6 @@ import br.com.anteros.bean.validation.util.SecureActions;
 import br.com.anteros.core.utils.IOUtils;
 
 
-@SuppressWarnings("restriction")
 public class ValidationParser {
     private static final String DEFAULT_VALIDATION_XML_FILE = "META-INF/anteros-validation.xml";
     private static final String VALIDATION_CONFIGURATION_XSD =
@@ -90,20 +84,13 @@ public class ValidationParser {
             }
 
             log.log(Level.FINEST, String.format("%s found.", validationXmlFile));
-
-            Schema schema = getSchema();
-            JAXBContext jc = JAXBContext.newInstance(ValidationConfigType.class);
-            Unmarshaller unmarshaller = jc.createUnmarshaller();
-            unmarshaller.setSchema(schema);
-            StreamSource stream = new StreamSource(inputStream);
-            JAXBElement<ValidationConfigType> root =
-                    unmarshaller.unmarshal(stream, ValidationConfigType.class);
-            return root.getValue();
-        } catch (JAXBException e) {
+            
+            Serializer serializer = new Persister(new Format("<?xml version=\"1.0\" encoding= \"UTF-8\" ?>"));
+            serializer.validate(ValidationConfigType.class, inputStream);
+            return serializer.read(ValidationConfigType.class, inputStream);
+        } catch (Exception e) {
             throw new ValidationException("Unable to parse " + validationXmlFile, e);
-        } catch (IOException e) {
-            throw new ValidationException("Unable to parse " + validationXmlFile, e);
-        } finally {
+		} finally {
             IOUtils.closeQuietly(inputStream);
         }
     }
@@ -113,13 +100,11 @@ public class ValidationParser {
         InputStream inputStream = loader.getResourceAsStream(path);
 
         if (inputStream != null) {
-            // spec says: If more than one META-INF/anteros-validation.xml file
-            // is found in the classpath, a ValidationException is raised.
             Enumeration<URL> urls = loader.getResources(path);
             if (urls.hasMoreElements()) {
                 String url = urls.nextElement().toString();
                 while (urls.hasMoreElements()) {
-                    if (!url.equals(urls.nextElement().toString())) { // complain when first duplicate found
+                    if (!url.equals(urls.nextElement().toString())) { 
                         throw new ValidationException("More than one " + path + " is found in the classpath");
                     }
                 }
@@ -129,7 +114,7 @@ public class ValidationParser {
         return inputStream;
     }
 
-    private Schema getSchema() {
+    protected InputStream getSchema() throws IOException {
         return getSchema(VALIDATION_CONFIGURATION_XSD);
     }
 
@@ -138,17 +123,10 @@ public class ValidationParser {
      *
      * @param xsd
      * @return {@link Schema}
+     * @throws IOException 
      */
-    static Schema getSchema(String xsd) {
-        ClassLoader loader = PrivilegedActions.getClassLoader(ValidationParser.class);
-        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        URL schemaUrl = loader.getResource(xsd);
-        try {
-            return sf.newSchema(schemaUrl);
-        } catch (SAXException e) {
-            log.log(Level.WARNING, String.format("Unable to parse schema: %s", xsd), e);
-            return null;
-        }
+    protected InputStream getSchema(String xsd) throws IOException {
+    	return getInputStream(xsd);
     }
 
     private void applyConfig(ValidationConfigType xmlConfig, ConfigurationImpl targetConfig) {
@@ -236,8 +214,7 @@ public class ValidationParser {
 
     private void applyMappingStreams(ValidationConfigType xmlConfig,
                                      ConfigurationImpl target) {
-        for (JAXBElement<String> mappingFileNameElement : xmlConfig.getConstraintMapping()) {
-            String mappingFileName = mappingFileNameElement.getValue();
+        for (String mappingFileName : xmlConfig.getConstraintMapping()) {
             if (mappingFileName.startsWith("/")) {
                 // Classloader needs a path without a starting /
                 mappingFileName = mappingFileName.substring(1);
