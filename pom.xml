@@ -6,10 +6,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>br.com.anteros</groupId>
 			<artifactId>Anteros-EL</artifactId>
+			<version>LATEST</version>
+		</dependency>
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Core</artifactId>
 			<version>LATEST</version>
 		</dependency>
 	</dependencies>
