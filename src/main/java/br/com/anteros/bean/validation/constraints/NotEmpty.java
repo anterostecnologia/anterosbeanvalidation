@@ -17,6 +17,12 @@ package br.com.anteros.bean.validation.constraints;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
+
+import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidator;
+import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidatorForCollection;
+import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidatorForMap;
+import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidatorForString;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
@@ -39,7 +45,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 public @interface NotEmpty {
     Class<?>[] groups() default {};
 
-    String message() default "{org.apache.bval.constraints.NotEmpty.message}";
+    String message() default "{br.com.anteros.bean.validation.constraints.NotEmpty.message}";
 
     Class<? extends Payload>[] payload() default {};
 }

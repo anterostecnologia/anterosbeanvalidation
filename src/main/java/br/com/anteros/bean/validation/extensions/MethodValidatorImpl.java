@@ -27,7 +27,7 @@ import javax.validation.metadata.ConstraintDescriptor;
 
 import br.com.anteros.bean.validation.AnterosFactoryContext;
 import br.com.anteros.bean.validation.BeanDescriptorImpl;
-import br.com.anteros.bean.validation.ClassValidator;
+import br.com.anteros.bean.validation.AnterosBeanValidator;
 import br.com.anteros.bean.validation.ConstraintValidation;
 import br.com.anteros.bean.validation.ConstraintValidationListener;
 import br.com.anteros.bean.validation.GroupValidationContext;
@@ -39,7 +39,7 @@ import br.com.anteros.bean.validation.util.ValidationHelper;
 /**
  * Description: experimental implementation of method-level-validation <br/>
  */
-class MethodValidatorImpl extends ClassValidator implements MethodValidator {
+class MethodValidatorImpl extends AnterosBeanValidator implements MethodValidator {
     /**
      * Create a new MethodValidatorImpl instance.
      * 

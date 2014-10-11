@@ -13,37 +13,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
+
 package br.com.anteros.bean.validation.constraints;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
-
-import br.com.anteros.bean.validation.constraints.validators.EmailValidator;
+import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
 /**
+ * Boolean operator that is applied to all constraints of a composing constraint annotation.
  * <p>
- * --
- * TODO - This class is NOT part of the bean_validation spec and might disappear
- * as soon as a final version of the specification contains a similar functionality.
- * --
+ * A composed constraint annotation can define a boolean combination of the constraints composing it,
+ * by using {@code @ConstraintComposition}.
  * </p>
- * Description: annotation to validate an email address (by pattern)<br/>
+ * @author Dag Hovland
+ * @author Federico Mancini
  */
 @Documented
-@Constraint(validatedBy = EmailValidator.class)
-@Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER})
+@Target({ ANNOTATION_TYPE })
 @Retention(RUNTIME)
-public @interface Email {
-    Class<?>[] groups() default {};
-
-    String message() default "{br.com.anteros.bean.validation.constraints.Email.message}";
-
-    Class<? extends Payload>[] payload() default {};
+public @interface ConstraintComposition {
+	/**
+	 * The value of this element specifies the boolean operator,
+	 * namely disjunction (OR), negation of the conjunction (ALL_FALSE),
+	 * or, the default, simple conjunction (AND).
+	 *
+	 * @return the {@code CompositionType} value
+	 */
+	CompositionType value() default CompositionType.AND;
 }

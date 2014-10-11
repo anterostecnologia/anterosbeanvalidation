@@ -41,7 +41,7 @@ import br.com.anteros.core.utils.ArrayUtils;
 public class DefaultMessageInterpolator implements MessageInterpolator {
     private static final Logger log = Logger.getLogger(DefaultMessageInterpolator.class.getName());
     private static final String DEFAULT_VALIDATION_MESSAGES =
-          "org.apache.bval.jsr303.ValidationMessages";
+          "anterosvalidation_messages";
     private static final String USER_VALIDATION_MESSAGES = "ValidationMessages";
 
     /** Regular expression used to do message interpolation. */

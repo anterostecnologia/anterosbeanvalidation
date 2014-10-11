@@ -122,7 +122,7 @@ public class AnterosFactoryContext implements ValidatorContext {
      * {@inheritDoc}
      */
     public Validator getValidator() {
-        ClassValidator validator = new ClassValidator(this);
+        AnterosBeanValidator validator = new AnterosBeanValidator(this);
         if (Boolean.parseBoolean(factory.getProperties().get(
             AnterosValidatorConfiguration.Properties.TREAT_MAPS_LIKE_BEANS))) {
             validator.setTreatMapsLikeBeans(true);

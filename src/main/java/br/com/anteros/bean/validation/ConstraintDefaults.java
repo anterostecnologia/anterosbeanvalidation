@@ -32,7 +32,7 @@ import java.util.logging.Logger;
 public class ConstraintDefaults {
     private static final Logger log = Logger.getLogger(ConstraintDefaults.class.getName());
     private static final String DEFAULT_CONSTRAINTS =
-          "org/apache/bval/jsr303/DefaultConstraints.properties";
+          "anterosdefaultconstraints.properties";
     
     /**
      * The default constraint data stored herein.
