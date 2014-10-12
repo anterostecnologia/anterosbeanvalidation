@@ -22,8 +22,6 @@ import javax.validation.ConstraintValidator;
 
 import br.com.anteros.bean.validation.constraints.Mod11Check;
 import br.com.anteros.bean.validation.constraints.Mod11Check.ProcessingDirection;
-import br.com.anteros.core.log.Logger;
-import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.ModUtil;
 
 /**

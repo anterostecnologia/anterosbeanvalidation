@@ -20,8 +20,6 @@ import java.util.List;
 import javax.validation.ConstraintValidator;
 
 import br.com.anteros.bean.validation.constraints.Mod10Check;
-import br.com.anteros.core.log.Logger;
-import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.ModUtil;
 
 /**

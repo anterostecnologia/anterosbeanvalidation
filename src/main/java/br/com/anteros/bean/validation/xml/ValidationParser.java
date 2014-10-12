@@ -22,8 +22,6 @@ import java.net.URL;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.Enumeration;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.validation.ConstraintValidatorFactory;
 import javax.validation.MessageInterpolator;
@@ -39,6 +37,9 @@ import org.simpleframework.xml.stream.Format;
 import br.com.anteros.bean.validation.ConfigurationImpl;
 import br.com.anteros.bean.validation.util.PrivilegedActions;
 import br.com.anteros.bean.validation.util.SecureActions;
+import br.com.anteros.core.log.LogLevel;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.IOUtils;
 
 
@@ -46,7 +47,7 @@ public class ValidationParser {
     private static final String DEFAULT_VALIDATION_XML_FILE = "META-INF/anteros-validation.xml";
     private static final String VALIDATION_CONFIGURATION_XSD =
             "META-INF/anteros-validation-configuration-1.0.xsd";
-    private static final Logger log = Logger.getLogger(ValidationParser.class.getName());
+    private static final Logger log = LoggerProvider.getInstance().getLogger(ValidationParser.class.getName());
     protected final String validationXmlFile;
 
     /**
@@ -79,11 +80,11 @@ public class ValidationParser {
         try {
             inputStream = getInputStream(validationXmlFile);
             if (inputStream == null) {
-            	log.log(Level.FINEST, String.format("No %s found. Using annotation based configuration only.", validationXmlFile));
+            	log.log(LogLevel.DEBUG, String.format("No %s found. Using annotation based configuration only.", validationXmlFile));
                 return null;
             }
 
-            log.log(Level.FINEST, String.format("%s found.", validationXmlFile));
+            log.log(LogLevel.DEBUG, String.format("%s found.", validationXmlFile));
             
             Serializer serializer = new Persister(new Format("<?xml version=\"1.0\" encoding= \"UTF-8\" ?>"));
             serializer.validate(ValidationConfigType.class, inputStream);
@@ -140,8 +141,8 @@ public class ValidationParser {
 
     private void applyProperties(ValidationConfigType xmlConfig, ConfigurationImpl target) {
         for (PropertyType property : xmlConfig.getProperty()) {
-            if (log.isLoggable(Level.FINEST)) {
-                log.log(Level.FINEST, String.format("Found property '%s' with value '%s' in %s", property.getName(), property.getValue(), validationXmlFile));
+            if (log.isDebugEnabled()) {
+                log.log(LogLevel.DEBUG, String.format("Found property '%s' with value '%s' in %s", property.getName(), property.getValue(), validationXmlFile));
             }
             target.addProperty(property.getName(), property.getValue());
         }
@@ -154,7 +155,7 @@ public class ValidationParser {
             Class<? extends ValidationProvider<?>> clazz =
                     (Class<? extends ValidationProvider<?>>) loadClass(providerClassName);
             target.setProviderClass(clazz);
-            log.log(Level.INFO, String.format("Using %s as validation provider.", providerClassName));
+            log.log(LogLevel.INFO, String.format("Using %s as validation provider.", providerClassName));
         }
     }
 
@@ -167,7 +168,7 @@ public class ValidationParser {
                 Class<MessageInterpolator> clazz = (Class<MessageInterpolator>)
                         loadClass(messageInterpolatorClass);
                 target.messageInterpolator(newInstance(clazz));
-                log.log(Level.INFO, String.format("Using %s as message interpolator.", messageInterpolatorClass));
+                log.log(LogLevel.INFO, String.format("Using %s as message interpolator.", messageInterpolatorClass));
             }
         }
     }
@@ -181,7 +182,7 @@ public class ValidationParser {
                 Class<TraversableResolver> clazz = (Class<TraversableResolver>)
                         loadClass(traversableResolverClass);
                 target.traversableResolver(newInstance(clazz));
-                log.log(Level.INFO, String.format("Using %s as traversable resolver.", traversableResolverClass));
+                log.log(LogLevel.INFO, String.format("Using %s as traversable resolver.", traversableResolverClass));
             }
         }
     }
@@ -207,7 +208,7 @@ public class ValidationParser {
                 Class<ConstraintValidatorFactory> clazz = (Class<ConstraintValidatorFactory>)
                         loadClass(constraintFactoryClass);
                 target.constraintValidatorFactory(newInstance(clazz));
-                log.log(Level.INFO, String.format("Using %s as constraint factory.", constraintFactoryClass));
+                log.log(LogLevel.INFO, String.format("Using %s as constraint factory.", constraintFactoryClass));
             }
         }
     }
@@ -219,7 +220,7 @@ public class ValidationParser {
                 // Classloader needs a path without a starting /
                 mappingFileName = mappingFileName.substring(1);
             }
-            log.log(Level.FINEST, String.format("Trying to open input stream for %s", mappingFileName));
+            log.log(LogLevel.DEBUG, String.format("Trying to open input stream for %s", mappingFileName));
             InputStream in = null;
             try {
                 in = getInputStream(mappingFileName);

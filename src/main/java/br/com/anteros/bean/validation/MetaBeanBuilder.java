@@ -17,10 +17,11 @@ package br.com.anteros.bean.validation;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import br.com.anteros.bean.validation.model.MetaBean;
+import br.com.anteros.core.log.LogLevel;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.ArrayUtils;
 import br.com.anteros.core.utils.ClassUtils;
 
@@ -30,7 +31,7 @@ import br.com.anteros.core.utils.ClassUtils;
  */
 public class MetaBeanBuilder {
 
-    private static final Logger log =  Logger.getLogger(MetaBeanBuilder.class.getName());
+    private static final Logger log =  LoggerProvider.getInstance().getLogger(MetaBeanBuilder.class.getName());
 
     /**
      * here you can install different kinds of factories to create MetaBeans
@@ -106,7 +107,7 @@ public class MetaBeanBuilder {
             try {
                 return ClassUtils.getClass(className);
             } catch (ClassNotFoundException e) {
-            	log.log(Level.FINE, String.format("Class not found: %s", className), e);
+            	log.log(LogLevel.DEBUG, String.format("Class not found: %s", className), e);
             }
         }
         return null;

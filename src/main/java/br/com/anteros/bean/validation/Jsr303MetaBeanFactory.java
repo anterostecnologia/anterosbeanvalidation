@@ -23,8 +23,6 @@ import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.validation.Constraint;
 import javax.validation.GroupDefinitionException;
@@ -40,6 +38,9 @@ import br.com.anteros.bean.validation.util.FieldAccess;
 import br.com.anteros.bean.validation.util.MethodAccess;
 import br.com.anteros.bean.validation.util.SecureActions;
 import br.com.anteros.bean.validation.xml.MetaConstraint;
+import br.com.anteros.core.log.LogLevel;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.ClassUtils;
 
 /**
@@ -49,7 +50,7 @@ import br.com.anteros.core.utils.ClassUtils;
 public class Jsr303MetaBeanFactory implements MetaBeanFactory {
     /** Shared log instance */
     // of dubious utility as it's static :/
-    protected static final Logger log = Logger.getLogger(Jsr303MetaBeanFactory.class.getName());
+    protected static final Logger log = LoggerProvider.getInstance().getLogger(Jsr303MetaBeanFactory.class.getName());
 
     /** {@link AnterosFactoryContext} used */
     protected final AnterosFactoryContext factoryContext;
@@ -274,7 +275,7 @@ public class Jsr303MetaBeanFactory implements MetaBeanFactory {
         if (!containsDefault) {
             throw new GroupDefinitionException("Redefined default group sequence must contain " + beanClass.getName());
         }
-        log.log(Level.FINEST, String.format("Default group sequence for bean %s is: %s", beanClass.getName(), groupSeq));
+        log.log(LogLevel.DEBUG, String.format("Default group sequence for bean %s is: %s", beanClass.getName(), groupSeq));
     }
 
     /**

@@ -16,20 +16,31 @@
 package br.com.anteros.bean.validation;
 
 
-import br.com.anteros.bean.validation.resolver.DefaultTraversableResolver;
-import br.com.anteros.bean.validation.util.SecureActions;
-import br.com.anteros.bean.validation.xml.ValidationParser;
+import java.io.InputStream;
+import java.security.AccessController;
+import java.security.PrivilegedAction;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import javax.validation.*;
+import javax.validation.ConstraintValidatorFactory;
+import javax.validation.MessageInterpolator;
+import javax.validation.TraversableResolver;
+import javax.validation.ValidationException;
+import javax.validation.ValidationProviderResolver;
+import javax.validation.ValidatorFactory;
 import javax.validation.spi.BootstrapState;
 import javax.validation.spi.ConfigurationState;
 import javax.validation.spi.ValidationProvider;
 
-import java.io.InputStream;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
-import java.util.*;
-import java.util.logging.Logger;
+import br.com.anteros.bean.validation.resolver.DefaultTraversableResolver;
+import br.com.anteros.bean.validation.util.SecureActions;
+import br.com.anteros.bean.validation.xml.ValidationParser;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
+
 
 /**
  * Description: used to configure apache-validation for jsr303.
@@ -38,7 +49,7 @@ import java.util.logging.Logger;
  * <br/>
  */
 public class ConfigurationImpl implements AnterosValidatorConfiguration, ConfigurationState {
-    private static final Logger log = Logger.getLogger(ConfigurationImpl.class.getName());
+    private static final Logger log = LoggerProvider.getInstance().getLogger(ConfigurationImpl.class.getName());
 
     /**
      * Configured {@link ValidationProvider}
@@ -261,7 +272,7 @@ public class ConfigurationImpl implements AnterosValidatorConfiguration, Configu
     /** Check whether a validation.xml file exists and parses it with JAXB */
     private void parseValidationXml() {
         if (isIgnoreXmlConfiguration()) {
-            log.config("ignoreXmlConfiguration == true");
+            log.debug("ignoreXmlConfiguration == true");
         } else {
             new ValidationParser(getProperties().get(Properties.VALIDATION_XML_PATH))
                   .processValidationConfig(this);

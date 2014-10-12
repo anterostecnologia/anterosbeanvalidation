@@ -23,13 +23,12 @@ import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.validation.MessageInterpolator;
 
+import br.com.anteros.bean.validation.constraints.ELAssert;
 import br.com.anteros.bean.validation.messageinterpolation.InterpolationTerm;
 import br.com.anteros.bean.validation.messageinterpolation.InterpolationTermType;
 import br.com.anteros.bean.validation.messageinterpolation.MessageDescriptorFormatException;
@@ -37,6 +36,9 @@ import br.com.anteros.bean.validation.messageinterpolation.MessageInterpolationT
 import br.com.anteros.bean.validation.messageinterpolation.MessageInterpolationTokenCollector;
 import br.com.anteros.bean.validation.messageinterpolation.MessageInterpolationTokenIterator;
 import br.com.anteros.bean.validation.util.SecureActions;
+import br.com.anteros.core.log.LogLevel;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.ArrayUtils;
 
 /**
@@ -45,7 +47,7 @@ import br.com.anteros.core.utils.ArrayUtils;
  * ResourceBundles to find the messages. This class is threadsafe.<br/>
  */
 public class DefaultMessageInterpolator implements MessageInterpolator {
-	private static final Logger log = Logger.getLogger(DefaultMessageInterpolator.class.getName());
+	private static final Logger log = LoggerProvider.getInstance().getLogger(DefaultMessageInterpolator.class.getName());
 	private static final String DEFAULT_VALIDATION_MESSAGES = "anterosvalidation_messages";
 	private static final String USER_VALIDATION_MESSAGES = "ValidationMessages";
 
@@ -148,12 +150,14 @@ public class DefaultMessageInterpolator implements MessageInterpolator {
 		// resolve annotation attributes (step 4)
 		resolvedMessage = replaceAnnotationAttributes(resolvedMessage, annotationParameters);
 
-		// resolve EL expressions (step 5)
-		List<MessageInterpolationToken> tokens = null;
-		MessageInterpolationTokenCollector tokenCollector;
-		tokenCollector = new MessageInterpolationTokenCollector(resolvedMessage, InterpolationTermType.EL);
-		tokens = tokenCollector.getTokenList();
-		resolvedMessage = interpolateExpression(new MessageInterpolationTokenIterator(tokens), context, locale);
+		if (!(context.getConstraintDescriptor().getAnnotation() instanceof ELAssert)) {
+			// resolve EL expressions (step 5)
+			List<MessageInterpolationToken> tokens = null;
+			MessageInterpolationTokenCollector tokenCollector;
+			tokenCollector = new MessageInterpolationTokenCollector(resolvedMessage, InterpolationTermType.EL);
+			tokens = tokenCollector.getTokenList();
+			resolvedMessage = interpolateExpression(new MessageInterpolationTokenIterator(tokens), context, locale);
+		}
 
 		// curly braces need to be scaped in the original msg, so unescape them
 		// now
@@ -205,9 +209,9 @@ public class DefaultMessageInterpolator implements MessageInterpolator {
 					+ " not found by validator classloader");
 		}
 		if (rb != null) {
-			log.log(Level.FINEST, String.format("%s found", USER_VALIDATION_MESSAGES));
+			log.log(LogLevel.DEBUG, String.format("%s found", USER_VALIDATION_MESSAGES));
 		} else {
-			log.log(Level.FINEST, String.format("%s not found. Delegating to %s", USER_VALIDATION_MESSAGES,
+			log.log(LogLevel.DEBUG, String.format("%s not found. Delegating to %s", USER_VALIDATION_MESSAGES,
 					DEFAULT_VALIDATION_MESSAGES));
 		}
 		return rb;
@@ -218,7 +222,7 @@ public class DefaultMessageInterpolator implements MessageInterpolator {
 		try {
 			rb = ResourceBundle.getBundle(USER_VALIDATION_MESSAGES, locale, classLoader);
 		} catch (MissingResourceException e) {
-			log.fine(message);
+			log.debug(message);
 		}
 		return rb;
 	}

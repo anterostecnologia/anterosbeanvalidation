@@ -16,21 +16,25 @@
 package br.com.anteros.bean.validation;
 
 import javax.validation.ConstraintValidator;
+
+import br.com.anteros.core.log.LogLevel;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  * Description: Provides access to the default constraints/validator implementation classes built into the framework.
  * These are configured in DefaultConstraints.properties.<br/>
  */
 public class ConstraintDefaults {
-    private static final Logger log = Logger.getLogger(ConstraintDefaults.class.getName());
+    private static final Logger log = LoggerProvider.getInstance().getLogger(ConstraintDefaults.class.getName());
     private static final String DEFAULT_CONSTRAINTS =
           "anterosdefaultconstraints.properties";
     
@@ -74,10 +78,10 @@ public class ConstraintDefaults {
             try {
                 constraintProperties.load(stream);
             } catch (IOException e) {
-                log.log(Level.SEVERE, String.format("Cannot load %s", resource), e);
+                log.log(LogLevel.ERROR, String.format("Cannot load %s", resource), e);
             }
         } else {
-            log.log(Level.WARNING, String.format("Cannot find %s", resource));
+            log.log(LogLevel.WARN, String.format("Cannot find %s", resource));
         }
 
         Map<String, Class<? extends ConstraintValidator<?, ?>>[]> loadedConstraints
@@ -95,7 +99,7 @@ public class ConstraintDefaults {
                               try {
                                   return Class.forName(eachClassName, true, classloader);
                               } catch (ClassNotFoundException e) {
-                                  log.log(Level.SEVERE, String.format("Cannot find class %s", eachClassName), e);
+                                  log.log(LogLevel.ERROR, String.format("Cannot find class %s", eachClassName), e);
                                   return null;
                               }
                           }

@@ -16,6 +16,8 @@
 package br.com.anteros.bean.validation;
 
 
+import java.util.Map;
+
 import javax.validation.ConstraintValidator;
 import javax.validation.MessageInterpolator;
 import javax.validation.TraversableResolver;
@@ -117,5 +119,9 @@ public interface GroupValidationContext<T>
      * @param currentOwner to set
      */
     void setCurrentOwner(Class<?> currentOwner);
+    
+    Map<String, Object> getMessageParameters();
+    
+    void setMessageParameter(String name, Object value);
 
 }

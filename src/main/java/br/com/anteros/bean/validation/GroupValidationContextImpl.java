@@ -17,6 +17,7 @@ package br.com.anteros.bean.validation;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import javax.validation.ConstraintValidator;
@@ -53,6 +54,8 @@ final class GroupValidationContextImpl<T> extends BeanValidationContext<Constrai
     private Group currentGroup;
 
     private Class<?> currentOwner;
+    
+    private Map<String,Object> messageParameters = new HashMap<String, Object>();
 
     /**
      * contains the validation constraints that have already been processed
@@ -287,4 +290,12 @@ final class GroupValidationContextImpl<T> extends BeanValidationContext<Constrai
     public void setCurrentOwner(Class<?> currentOwner) {
         this.currentOwner = currentOwner;
     }
+
+	public Map<String, Object> getMessageParameters() {
+		return this.messageParameters;
+	}
+
+	public void setMessageParameter(String name, Object value) {
+		this.messageParameters.put(name, value);
+	}
 }

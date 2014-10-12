@@ -21,8 +21,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import br.com.anteros.core.log.LogLevel;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
 
 /**
  * Description: This class instantiated during the parsing of the XML configuration
@@ -30,7 +32,7 @@ import java.util.logging.Logger;
  */
 public final class AnnotationIgnores {
 
-    private static final Logger log = Logger.getLogger(AnnotationIgnores.class.getName());
+    private static final Logger log = LoggerProvider.getInstance().getLogger(AnnotationIgnores.class.getName());
 
     /**
      * Keeps track whether the 'ignore-annotations' flag is set on bean level in the
@@ -114,7 +116,7 @@ public final class AnnotationIgnores {
         } else {
             type = "Property";
         }
-        log.log(Level.FINEST, String.format("%s level annotations are getting ignored for %s.%s", type, clazz.getName(), member.getName()));
+        log.log(LogLevel.DEBUG, String.format("%s level annotations are getting ignored for %s.%s", type, clazz.getName(), member.getName()));
     }
 
     /**
@@ -139,7 +141,7 @@ public final class AnnotationIgnores {
             ignoreAnnotation = getDefaultIgnoreAnnotation(clazz);
         }
         if (ignoreAnnotation) {
-        	log.log(Level.FINEST, String.format("Class level annotation are getting ignored for %s", clazz.getName()));
+        	log.log(LogLevel.DEBUG, String.format("Class level annotation are getting ignored for %s", clazz.getName()));
         }
         return ignoreAnnotation;
     }
