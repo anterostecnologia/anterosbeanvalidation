@@ -15,7 +15,6 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.util;
 
-import java.beans.PropertyDescriptor;
 import java.lang.annotation.ElementType;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
