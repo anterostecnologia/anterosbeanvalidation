@@ -32,22 +32,22 @@ import br.com.anteros.core.utils.ClassUtils;
 public class DefaultTraversableResolver implements TraversableResolver, CachingRelevant {
     private static final Logger log = LoggerProvider.getInstance().getLogger(DefaultTraversableResolver.class.getName());
 
-    /** Class to load to check whether JPA 2 is on the classpath. */
-    private static final String PERSISTENCE_UTIL_CLASSNAME =
-          "javax.persistence.PersistenceUtil";
+    /** Class to load to check whether Anteros Persistence is on the classpath. */
+    private static final String ANTEROS_PERSISTENCE_CLASSNAME =
+          "br.com.anteros.persistence.session.configuration.AnterosPersistenceConfiguration";
 
-    /** Class to instantiate in case JPA 2 is on the classpath. */
-    private static final String JPA_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME =
-          "org.apache.bval.jsr303.resolver.JPATraversableResolver";
+    /** Class to instantiate in case Anteros Persistence is on the classpath. */
+    private static final String ANTEROS_PERSISTENCE_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME =
+          "br.com.anteros.bean.validation.resolver.AnterosPersistenceTraversableResolver";
 
 
-    private TraversableResolver jpaTR;
+    private TraversableResolver anterosPersistenceTR;
 
     /**
      * Create a new DefaultTraversableResolver instance.
      */
     public DefaultTraversableResolver() {
-        initJpa();
+        initAnterosPersistence();
     }
 
     /**
@@ -56,7 +56,7 @@ public class DefaultTraversableResolver implements TraversableResolver, CachingR
     public boolean isReachable(Object traversableObject, Path.Node traversableProperty,
                                Class<?> rootBeanType, Path pathToTraversableObject,
                                ElementType elementType) {
-        return jpaTR == null || jpaTR.isReachable(traversableObject, traversableProperty,
+        return anterosPersistenceTR == null || anterosPersistenceTR.isReachable(traversableObject, traversableProperty,
               rootBeanType, pathToTraversableObject, elementType);
     }
 
@@ -66,33 +66,33 @@ public class DefaultTraversableResolver implements TraversableResolver, CachingR
     public boolean isCascadable(Object traversableObject, Path.Node traversableProperty,
                                 Class<?> rootBeanType, Path pathToTraversableObject,
                                 ElementType elementType) {
-        return jpaTR == null || jpaTR.isCascadable(traversableObject, traversableProperty,
+        return anterosPersistenceTR == null || anterosPersistenceTR.isCascadable(traversableObject, traversableProperty,
               rootBeanType, pathToTraversableObject, elementType);
     }
 
-    /** Tries to load detect and load JPA. */
+    /** Tries to load detect and load Anteros Persistence. */
     @SuppressWarnings("unchecked")
-    private void initJpa() {
+    private void initAnterosPersistence() {
         final ClassLoader classLoader = getClassLoader();
         try {
-            PrivilegedActions.getClass(classLoader, PERSISTENCE_UTIL_CLASSNAME);
-            log.log(LogLevel.DEBUG, String.format("Found %s on classpath.", PERSISTENCE_UTIL_CLASSNAME));
+            PrivilegedActions.getClass(classLoader, ANTEROS_PERSISTENCE_CLASSNAME);
+            log.log(LogLevel.DEBUG, String.format("Found %s on classpath.", ANTEROS_PERSISTENCE_CLASSNAME));
         } catch (Exception e) {
-            log.log(LogLevel.DEBUG, String.format("Cannot find %s on classpath. All properties will per default be traversable.", PERSISTENCE_UTIL_CLASSNAME));
+            log.log(LogLevel.DEBUG, String.format("Cannot find %s on classpath. All properties will per default be traversable.", ANTEROS_PERSISTENCE_CLASSNAME));
             return;
         }
 
         try {
-            Class<? extends TraversableResolver> jpaAwareResolverClass =
+            Class<? extends TraversableResolver> anterosPersistenceAwareResolverClass =
               (Class<? extends TraversableResolver>)
-                ClassUtils.getClass(classLoader, JPA_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME, true);
-            jpaTR = jpaAwareResolverClass.newInstance();
-            log.log(LogLevel.DEBUG, String.format("Instantiated an instance of %s.", JPA_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME));
+                ClassUtils.getClass(classLoader, ANTEROS_PERSISTENCE_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME, true);
+            anterosPersistenceTR = anterosPersistenceAwareResolverClass.newInstance();
+            log.log(LogLevel.DEBUG, String.format("Instantiated an instance of %s.", ANTEROS_PERSISTENCE_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME));
         } catch (Exception e) {
 			log.log(LogLevel.WARN,
 					String.format(
-							"Unable to load or instantiate JPA aware resolver %s. All properties will per default be traversable.",
-							JPA_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME, e));
+							"Unable to load or instantiate Anteros Persistence aware resolver %s. All properties will per default be traversable.",
+							ANTEROS_PERSISTENCE_AWARE_TRAVERSABLE_RESOLVER_CLASSNAME, e));
         }
     }
 
@@ -100,7 +100,7 @@ public class DefaultTraversableResolver implements TraversableResolver, CachingR
      * {@inheritDoc}
      */
     public boolean needsCaching() {
-        return jpaTR != null && CachingTraversableResolver.needsCaching(jpaTR);
+        return anterosPersistenceTR != null && CachingTraversableResolver.needsCaching(anterosPersistenceTR);
     }
 
     private static ClassLoader getClassLoader()
