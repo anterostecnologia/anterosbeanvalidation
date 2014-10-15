@@ -17,7 +17,7 @@ import javax.validation.Payload;
 
 import br.com.anteros.bean.validation.constraints.validators.ELAssertValidator;
 
-@Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER})
+@Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER, TYPE})
 @Retention(RUNTIME)
 @Constraint(validatedBy = {ELAssertValidator.class })
 @Documented
