@@ -109,4 +109,8 @@ public class FieldAccess extends AccessStrategy {
             return action.run();
         }
     }
+
+	public Field getField() {
+		return field;
+	}
 }

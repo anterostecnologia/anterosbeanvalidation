@@ -47,7 +47,8 @@ import br.com.anteros.core.utils.ArrayUtils;
  * ResourceBundles to find the messages. This class is threadsafe.<br/>
  */
 public class DefaultMessageInterpolator implements MessageInterpolator {
-	private static final Logger log = LoggerProvider.getInstance().getLogger(DefaultMessageInterpolator.class.getName());
+	private static final Logger log = LoggerProvider.getInstance()
+			.getLogger(DefaultMessageInterpolator.class.getName());
 	private static final String DEFAULT_VALIDATION_MESSAGES = "anterosvalidation_messages";
 	private static final String USER_VALIDATION_MESSAGES = "ValidationMessages";
 
@@ -150,8 +151,14 @@ public class DefaultMessageInterpolator implements MessageInterpolator {
 		// resolve annotation attributes (step 4)
 		resolvedMessage = replaceAnnotationAttributes(resolvedMessage, annotationParameters);
 
+		// resolve custom message parameters (step 5)
+		if (context instanceof GroupValidationContext) {
+			GroupValidationContext<?> validationContext = ((GroupValidationContext<?>) context);
+			resolvedMessage = replaceCustomMessageParameters(resolvedMessage, validationContext.getMessageParameters());
+		}
+
 		if (!(context.getConstraintDescriptor().getAnnotation() instanceof ELAssert)) {
-			// resolve EL expressions (step 5)
+			// resolve EL expressions (step 6)
 			List<MessageInterpolationToken> tokens = null;
 			MessageInterpolationTokenCollector tokenCollector;
 			tokenCollector = new MessageInterpolationTokenCollector(resolvedMessage, InterpolationTermType.EL);
@@ -163,7 +170,7 @@ public class DefaultMessageInterpolator implements MessageInterpolator {
 		// now
 		resolvedMessage = resolvedMessage.replace("\\{", "{").replace("\\}", "}").replace("\\\\", "\\");
 
-		return resolvedMessage;
+		return resolvedMessage.trim();
 	}
 
 	private String interpolateExpression(MessageInterpolationTokenIterator tokenIterator, Context context, Locale locale)
@@ -248,6 +255,28 @@ public class DefaultMessageInterpolator implements MessageInterpolator {
 			String resolvedParameterValue;
 			String parameter = matcher.group(1);
 			Object variable = annotationParameters.get(removeCurlyBrace(parameter));
+			if (variable != null) {
+				if (variable.getClass().isArray()) {
+					resolvedParameterValue = ArrayUtils.toString((Object[]) variable);
+				} else {
+					resolvedParameterValue = variable.toString();
+				}
+			} else {
+				resolvedParameterValue = parameter;
+			}
+			matcher.appendReplacement(sb, sanitizeForAppendReplacement(resolvedParameterValue));
+		}
+		matcher.appendTail(sb);
+		return sb.toString();
+	}
+
+	private String replaceCustomMessageParameters(String message, Map<String, Object> messageParameters) {
+		Matcher matcher = messageParameterPattern.matcher(message);
+		StringBuffer sb = new StringBuffer(64);
+		while (matcher.find()) {
+			String resolvedParameterValue;
+			String parameter = matcher.group(1);
+			Object variable = messageParameters.get(removeCurlyBrace(parameter));
 			if (variable != null) {
 				if (variable.getClass().isArray()) {
 					resolvedParameterValue = ArrayUtils.toString((Object[]) variable);

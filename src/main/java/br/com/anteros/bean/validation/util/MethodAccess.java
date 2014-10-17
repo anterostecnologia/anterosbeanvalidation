@@ -152,4 +152,8 @@ public class MethodAccess extends AccessStrategy {
 			return action.run();
 		}
 	}
+
+	public Method getMethod() {
+		return method;
+	}
 }
