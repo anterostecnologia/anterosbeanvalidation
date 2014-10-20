@@ -22,6 +22,9 @@ public class ELAssertValidator implements ConstraintValidator<ELAssert, Object> 
 	}
 
 	public boolean isValid(Object value, ConstraintValidatorContext constraintValidatorContext) {
+		if (value ==null)
+			return true;
+		
 		if (constraintValidatorContext instanceof ConstraintValidatorContextImpl) {
 			GroupValidationContext<?> validationContext = ((ConstraintValidatorContextImpl) constraintValidatorContext)
 					.getValidationContext();

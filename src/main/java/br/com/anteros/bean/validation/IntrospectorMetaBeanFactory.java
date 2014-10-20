@@ -19,16 +19,16 @@ import static br.com.anteros.bean.validation.model.Features.Property.HIDDEN;
 import static br.com.anteros.bean.validation.model.Features.Property.PREFERRED;
 import static br.com.anteros.bean.validation.model.Features.Property.READONLY;
 
+import java.beans.BeanInfo;
+import java.beans.IndexedPropertyDescriptor;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.Enumeration;
 
 import br.com.anteros.bean.validation.model.MetaBean;
 import br.com.anteros.bean.validation.model.MetaProperty;
-import br.com.anteros.core.metadata.beans.BeanInfo;
-import br.com.anteros.core.metadata.beans.IndexedPropertyDescriptor;
-import br.com.anteros.core.metadata.beans.Introspector;
-import br.com.anteros.core.metadata.beans.PropertyDescriptor;
 
 /**
  * Description: use information from java.beans.Introspector in MetaBeans. The PropertyDescriptor can contain info about

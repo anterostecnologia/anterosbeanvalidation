@@ -16,14 +16,13 @@
 package br.com.anteros.bean.validation.util;
 
 
+import java.beans.Introspector;
 import java.lang.annotation.ElementType;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-
-import br.com.anteros.core.metadata.beans.Introspector;
 
 /**
  * Description: invoke a zero-argument method (getter)<br/>
