@@ -16,18 +16,19 @@
 package br.com.anteros.bean.validation.messageinterpolation;
 
 
-import java.beans.FeatureDescriptor;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.Map;
 
-import javax.el.ELContext;
-import javax.el.ELException;
-import javax.el.ELResolver;
-import javax.el.PropertyNotFoundException;
 import javax.validation.ValidationException;
+
+import br.com.anteros.core.metadata.beans.FeatureDescriptor;
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.ELResolver;
+import br.com.anteros.el.api.PropertyNotFoundException;
 
 
 public class RootResolver extends ELResolver {

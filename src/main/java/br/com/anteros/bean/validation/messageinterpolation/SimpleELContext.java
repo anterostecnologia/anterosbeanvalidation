@@ -16,16 +16,17 @@
 package br.com.anteros.bean.validation.messageinterpolation;
 
 import java.lang.reflect.Method;
-import javax.el.ArrayELResolver;
-import javax.el.BeanELResolver;
-import javax.el.CompositeELResolver;
-import javax.el.ELContext;
-import javax.el.ELResolver;
-import javax.el.ListELResolver;
-import javax.el.MapELResolver;
-import javax.el.ResourceBundleELResolver;
-import javax.el.ValueExpression;
-import javax.el.VariableMapper;
+
+import br.com.anteros.el.api.ArrayELResolver;
+import br.com.anteros.el.api.BeanELResolver;
+import br.com.anteros.el.api.CompositeELResolver;
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ELResolver;
+import br.com.anteros.el.api.ListELResolver;
+import br.com.anteros.el.api.MapELResolver;
+import br.com.anteros.el.api.ResourceBundleELResolver;
+import br.com.anteros.el.api.ValueExpression;
+import br.com.anteros.el.api.VariableMapper;
 
 
 public class SimpleELContext extends ELContext {

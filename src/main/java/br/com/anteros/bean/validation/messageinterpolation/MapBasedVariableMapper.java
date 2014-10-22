@@ -18,8 +18,9 @@ package br.com.anteros.bean.validation.messageinterpolation;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import javax.el.ValueExpression;
-import javax.el.VariableMapper;
+
+import br.com.anteros.el.api.ValueExpression;
+import br.com.anteros.el.api.VariableMapper;
 
 
 public class MapBasedVariableMapper extends VariableMapper {

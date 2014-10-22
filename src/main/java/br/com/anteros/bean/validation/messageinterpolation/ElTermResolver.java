@@ -18,14 +18,14 @@ package br.com.anteros.bean.validation.messageinterpolation;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.el.ELException;
-import javax.el.ExpressionFactory;
-import javax.el.PropertyNotFoundException;
-import javax.el.ValueExpression;
 import javax.validation.MessageInterpolator;
 
 import br.com.anteros.bean.validation.GroupValidationContext;
 import br.com.anteros.bean.validation.UnknownPropertyException;
+import br.com.anteros.el.api.ELException;
+import br.com.anteros.el.api.ExpressionFactory;
+import br.com.anteros.el.api.PropertyNotFoundException;
+import br.com.anteros.el.api.ValueExpression;
 
 /**
  * Resolver for the el expressions.
