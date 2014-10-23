@@ -25,7 +25,7 @@ public class FieldRequiredValidator implements ConstraintValidator<Required, Obj
 		} else if (value instanceof Collection<?>) {
 			return !((Collection<?>) value).isEmpty();
 		} else if (value instanceof String) {
-			return StringUtils.isEmpty((String) value);
+			return !StringUtils.isEmpty((String) value);
 		}
 		return true;
 	}
