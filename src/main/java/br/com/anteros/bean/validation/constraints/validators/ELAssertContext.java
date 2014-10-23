@@ -3,11 +3,11 @@ package br.com.anteros.bean.validation.constraints.validators;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.el.ELContext;
-import javax.el.ExpressionFactory;
-import javax.el.ValueExpression;
 import javax.validation.ConstraintDeclarationException;
 
+import br.com.anteros.el.api.ELContext;
+import br.com.anteros.el.api.ExpressionFactory;
+import br.com.anteros.el.api.ValueExpression;
 import br.com.anteros.el.util.SimpleContext;
 
 /**

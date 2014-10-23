@@ -19,7 +19,8 @@ import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import javax.el.FunctionMapper;
+
+import br.com.anteros.el.api.FunctionMapper;
 
 /**
  * @author Hardy Ferentschik
