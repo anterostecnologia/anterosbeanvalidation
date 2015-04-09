@@ -15,10 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.messageinterpolation;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import br.com.anteros.core.utils.CollectionUtils;
 
 /**
  * Used to creates a list of tokens from a message descriptor.
@@ -45,7 +44,7 @@ public class MessageInterpolationTokenCollector {
 		this.originalMessageDescriptor = originalMessageDescriptor;
 		this.interpolationTermType = interpolationTermType;
 		this.currentParserState = new BeginState();
-		this.tokenList = CollectionUtils.newArrayList();
+		this.tokenList = new ArrayList<MessageInterpolationToken>();
 
 		parse();
 	}
