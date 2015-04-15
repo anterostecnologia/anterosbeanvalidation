@@ -37,7 +37,6 @@ import javax.validation.spi.ValidationProvider;
 
 import br.com.anteros.bean.validation.resolver.DefaultTraversableResolver;
 import br.com.anteros.bean.validation.util.SecureActions;
-import br.com.anteros.bean.validation.xml.ValidationParser;
 import br.com.anteros.core.log.Logger;
 import br.com.anteros.core.log.LoggerProvider;
 
@@ -273,9 +272,6 @@ public class ConfigurationImpl implements AnterosValidatorConfiguration, Configu
     private void parseValidationXml() {
         if (isIgnoreXmlConfiguration()) {
             log.debug("ignoreXmlConfiguration == true");
-        } else {
-            new ValidationParser(getProperties().get(Properties.VALIDATION_XML_PATH))
-                  .processValidationConfig(this);
         }
     }
 
