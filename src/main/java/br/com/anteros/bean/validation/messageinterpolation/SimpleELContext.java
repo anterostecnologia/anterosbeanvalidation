@@ -24,7 +24,7 @@ import br.com.anteros.el.api.ELContext;
 import br.com.anteros.el.api.ELResolver;
 import br.com.anteros.el.api.ListELResolver;
 import br.com.anteros.el.api.MapELResolver;
-import br.com.anteros.el.api.ResourceBundleELResolver;
+import br.com.anteros.el.api.AnterosBundleELResolver;
 import br.com.anteros.el.api.ValueExpression;
 import br.com.anteros.el.api.VariableMapper;
 
@@ -36,7 +36,7 @@ public class SimpleELContext extends ELContext {
 			add( new ArrayELResolver( false ) );
 			add( new ListELResolver( false ) );
 			add( new MapELResolver( false ) );
-			add( new ResourceBundleELResolver() );
+			add( new AnterosBundleELResolver() );
 			add( new BeanELResolver( false ) );
 		}
 	};
