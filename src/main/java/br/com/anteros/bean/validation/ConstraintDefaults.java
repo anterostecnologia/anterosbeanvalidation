@@ -15,18 +15,21 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.ConstraintValidator;
-
-import br.com.anteros.core.log.LogLevel;
-import br.com.anteros.core.log.Logger;
-import br.com.anteros.core.log.LoggerProvider;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Properties;
+import java.util.StringTokenizer;
+
+import javax.validation.ConstraintValidator;
+
+import br.com.anteros.bean.validation.resource.messages.AnterosDefaultConstraints;
+import br.com.anteros.core.log.LogLevel;
+import br.com.anteros.core.log.Logger;
+import br.com.anteros.core.log.LoggerProvider;
 
 
 /**
@@ -35,8 +38,6 @@ import java.util.*;
  */
 public class ConstraintDefaults {
     private static final Logger log = LoggerProvider.getInstance().getLogger(ConstraintDefaults.class.getName());
-    private static final String DEFAULT_CONSTRAINTS =
-          "anterosdefaultconstraints.properties";
     
     /**
      * The default constraint data stored herein.
@@ -47,7 +48,7 @@ public class ConstraintDefaults {
      * Create a new ConstraintDefaults instance.
      */
     public ConstraintDefaults() {
-        defaultConstraints = loadDefaultConstraints(DEFAULT_CONSTRAINTS);
+        defaultConstraints = loadDefaultConstraints();
     }
 
     /**
@@ -70,20 +71,9 @@ public class ConstraintDefaults {
     }
 
     @SuppressWarnings("unchecked")
-    private Map<String, Class<? extends ConstraintValidator<?, ?>>[]> loadDefaultConstraints(String resource) {
-        Properties constraintProperties = new Properties();
+    private Map<String, Class<? extends ConstraintValidator<?, ?>>[]> loadDefaultConstraints() {
+        Properties constraintProperties = AnterosDefaultConstraints.getConstraints();
         final ClassLoader classloader = getClassLoader();
-        InputStream stream = classloader.getResourceAsStream(resource);
-        if (stream != null) {
-            try {
-                constraintProperties.load(stream);
-            } catch (IOException e) {
-                log.log(LogLevel.ERROR, String.format("Cannot load %s", resource), e);
-            }
-        } else {
-            log.log(LogLevel.WARN, String.format("Cannot find %s", resource));
-        }
-
         Map<String, Class<? extends ConstraintValidator<?, ?>>[]> loadedConstraints
                 = new HashMap<String, Class<? extends ConstraintValidator<?,?>>[]>();
         for (Map.Entry<Object, Object> entry : constraintProperties.entrySet()) {
