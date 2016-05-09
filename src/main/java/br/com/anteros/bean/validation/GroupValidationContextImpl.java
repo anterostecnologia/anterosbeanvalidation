@@ -21,11 +21,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.MessageInterpolator;
-import javax.validation.TraversableResolver;
-import javax.validation.metadata.ConstraintDescriptor;
-
 import br.com.anteros.bean.validation.groups.Group;
 import br.com.anteros.bean.validation.groups.Groups;
 import br.com.anteros.bean.validation.model.MetaBean;
@@ -39,6 +34,10 @@ import br.com.anteros.core.utils.StringUtils;
 import br.com.anteros.persistence.metadata.annotation.Column;
 import br.com.anteros.persistence.metadata.annotation.Columns;
 import br.com.anteros.persistence.metadata.annotation.Label;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.MessageInterpolator;
+import br.com.anteros.validation.api.TraversableResolver;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
 
 /**
  * Description: instance per validation process, not thread-safe<br/>

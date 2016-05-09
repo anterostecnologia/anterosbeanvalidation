@@ -15,13 +15,12 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
-
 import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidator;
 import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidatorForCollection;
 import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidatorForMap;
 import br.com.anteros.bean.validation.constraints.validators.NotEmptyValidatorForString;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.Payload;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

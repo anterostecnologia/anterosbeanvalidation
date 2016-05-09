@@ -19,12 +19,11 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.validation.metadata.BeanDescriptor;
-import javax.validation.metadata.PropertyDescriptor;
-
 import br.com.anteros.bean.validation.model.Features;
 import br.com.anteros.bean.validation.model.MetaBean;
 import br.com.anteros.bean.validation.model.MetaProperty;
+import br.com.anteros.validation.api.metadata.BeanDescriptor;
+import br.com.anteros.validation.api.metadata.PropertyDescriptor;
 
 /**
  * Description: Implements {@link BeanDescriptor}.<br/>

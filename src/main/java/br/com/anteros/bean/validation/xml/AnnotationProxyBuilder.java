@@ -26,11 +26,10 @@ import java.security.PrivilegedAction;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.validation.Payload;
-import javax.validation.ValidationException;
-
 import br.com.anteros.bean.validation.ConstraintAnnotationAttributes;
 import br.com.anteros.bean.validation.util.SecureActions;
+import br.com.anteros.validation.api.Payload;
+import br.com.anteros.validation.api.ValidationException;
 
 /**
  * Description: Holds the information and creates an annotation proxy during xml

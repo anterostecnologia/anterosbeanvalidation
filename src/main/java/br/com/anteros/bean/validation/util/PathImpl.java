@@ -15,12 +15,12 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.util;
 
-import javax.validation.Path;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import br.com.anteros.validation.api.Path;
 
 /**
  * Description: object holding the property path as a list of nodes.

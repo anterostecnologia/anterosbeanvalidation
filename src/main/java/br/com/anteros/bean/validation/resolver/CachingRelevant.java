@@ -15,7 +15,7 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.resolver;
 
-import javax.validation.TraversableResolver;
+import br.com.anteros.validation.api.TraversableResolver;
 
 /**
  * Description: indicator interface to let the implementation choose

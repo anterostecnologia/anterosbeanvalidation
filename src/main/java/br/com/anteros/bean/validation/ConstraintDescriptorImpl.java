@@ -15,13 +15,14 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.Payload;
-import javax.validation.metadata.ConstraintDescriptor;
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import br.com.anteros.validation.api.Payload;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
 
 /**
  * Description: immutable, serializable implementation of ConstraintDescriptor
@@ -36,8 +37,8 @@ public class ConstraintDescriptorImpl<T extends Annotation> implements Constrain
 
     private final T annotation;
     private final Set<Class<?>> groups;
-    private final Set<Class<? extends javax.validation.Payload>> payload;
-    private final List<java.lang.Class<? extends javax.validation.ConstraintValidator<T, ?>>> constraintValidatorClasses;
+    private final Set<Class<? extends br.com.anteros.validation.api.Payload>> payload;
+    private final List<java.lang.Class<? extends br.com.anteros.validation.api.ConstraintValidator<T, ?>>> constraintValidatorClasses;
     private final Map<String, Object> attributes;
     private final Set<ConstraintDescriptor<?>> composingConstraints;
     private final boolean reportAsSingleViolation;
@@ -65,8 +66,8 @@ public class ConstraintDescriptorImpl<T extends Annotation> implements Constrain
      * @param reportAsSingleViolation
      */
     public ConstraintDescriptorImpl(T annotation, Set<Class<?>> groups,
-        Set<Class<? extends javax.validation.Payload>> payload,
-        List<java.lang.Class<? extends javax.validation.ConstraintValidator<T, ?>>> constraintValidatorClasses,
+        Set<Class<? extends br.com.anteros.validation.api.Payload>> payload,
+        List<java.lang.Class<? extends br.com.anteros.validation.api.ConstraintValidator<T, ?>>> constraintValidatorClasses,
         Map<String, Object> attributes, Set<ConstraintDescriptor<?>> composingConstraints,
         boolean reportAsSingleViolation) {
         this.annotation = annotation;
@@ -102,7 +103,7 @@ public class ConstraintDescriptorImpl<T extends Annotation> implements Constrain
     /**
      * {@inheritDoc}
      */
-    public List<java.lang.Class<? extends javax.validation.ConstraintValidator<T, ?>>> getConstraintValidatorClasses() {
+    public List<java.lang.Class<? extends br.com.anteros.validation.api.ConstraintValidator<T, ?>>> getConstraintValidatorClasses() {
         return constraintValidatorClasses;
     }
 

@@ -22,8 +22,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.validation.MessageInterpolator;
-
 import br.com.anteros.bean.validation.constraints.ELAssert;
 import br.com.anteros.bean.validation.messageinterpolation.InterpolationTerm;
 import br.com.anteros.bean.validation.messageinterpolation.InterpolationTermType;
@@ -37,6 +35,7 @@ import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.resource.messages.AnterosBundle;
 import br.com.anteros.core.resource.messages.AnterosResourceBundle;
 import br.com.anteros.core.utils.ArrayUtils;
+import br.com.anteros.validation.api.MessageInterpolator;
 
 /**
  * Description: Resource bundle backed message interpolator. This message resolver resolve message descriptors into

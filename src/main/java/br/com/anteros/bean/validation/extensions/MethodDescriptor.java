@@ -15,8 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.extensions;
 
-import javax.validation.metadata.ElementDescriptor;
 import java.util.List;
+
+import br.com.anteros.validation.api.metadata.ElementDescriptor;
 
 /**
  * Description: This class will disappear when such

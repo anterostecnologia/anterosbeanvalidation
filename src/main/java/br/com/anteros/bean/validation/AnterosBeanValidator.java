@@ -24,11 +24,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ValidationException;
-import javax.validation.groups.Default;
-import javax.validation.metadata.BeanDescriptor;
-
 import br.com.anteros.bean.validation.groups.Group;
 import br.com.anteros.bean.validation.groups.Groups;
 import br.com.anteros.bean.validation.groups.GroupsComputer;
@@ -46,6 +41,10 @@ import br.com.anteros.core.utils.ArrayUtils;
 import br.com.anteros.core.utils.ClassUtils;
 import br.com.anteros.core.utils.ObjectUtils;
 import br.com.anteros.core.utils.TypeUtils;
+import br.com.anteros.validation.api.ConstraintViolation;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.groups.Default;
+import br.com.anteros.validation.api.metadata.BeanDescriptor;
 
 // TODO: centralize treatMapsLikeBeans
 
@@ -115,7 +114,7 @@ public class AnterosBeanValidator implements CascadingPropertyValidator {
      *
      * @param object object to validate
      * @param groups group or list of groups targeted for validation (default to
-     *               {@link javax.validation.groups.Default})
+     *               {@link br.com.anteros.validation.api.groups.Default})
      * @return constraint violations or an empty Set if none
      * @throws IllegalArgumentException if object is null or if null is passed to the varargs groups
      * @throws ValidationException      if a non recoverable error happens during the validation
@@ -172,7 +171,7 @@ public class AnterosBeanValidator implements CascadingPropertyValidator {
      * @param propertyName property to validate (ie field and getter constraints). Nested
      *                     properties may be referenced (e.g. prop[2].subpropA.subpropB)
      * @param groups       group or list of groups targeted for validation (default to
-     *                     {@link javax.validation.groups.Default})
+     *                     {@link br.com.anteros.validation.api.groups.Default})
      * @return constraint violations or an empty Set if none
      * @throws IllegalArgumentException if <code>object</code> is null, if <code>propertyName</code>
      *                                  null, empty or not a valid object property or if null is
@@ -211,7 +210,7 @@ public class AnterosBeanValidator implements CascadingPropertyValidator {
      * @param propertyName property to validate
      * @param value        property value to validate
      * @param groups       group or list of groups targeted for validation (default to
-     *                     {@link javax.validation.groups.Default})
+     *                     {@link br.com.anteros.validation.api.groups.Default})
      * @return constraint violations or an empty Set if none
      * @throws IllegalArgumentException if <code>beanType</code> is null, if
      *                                  <code>propertyName</code> null, empty or not a valid object
@@ -439,7 +438,7 @@ public class AnterosBeanValidator implements CascadingPropertyValidator {
     }
 
     /**
-     * Before accessing a related bean (marked with {@link javax.validation.Valid}), the validator has to check if it is
+     * Before accessing a related bean (marked with {@link br.com.anteros.validation.api.Valid}), the validator has to check if it is
      * reachable and cascadable.
      *
      * @param context The current validation context.

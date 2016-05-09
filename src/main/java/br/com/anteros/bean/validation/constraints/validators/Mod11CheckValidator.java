@@ -18,11 +18,10 @@ package br.com.anteros.bean.validation.constraints.validators;
 import java.util.Collections;
 import java.util.List;
 
-import javax.validation.ConstraintValidator;
-
 import br.com.anteros.bean.validation.constraints.Mod11Check;
 import br.com.anteros.bean.validation.constraints.Mod11Check.ProcessingDirection;
 import br.com.anteros.core.utils.ModUtil;
+import br.com.anteros.validation.api.ConstraintValidator;
 
 /**
  * Mod11 Check Digit validator

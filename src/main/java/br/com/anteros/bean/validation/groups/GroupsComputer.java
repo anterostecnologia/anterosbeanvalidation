@@ -16,11 +16,12 @@
 package br.com.anteros.bean.validation.groups;
 
 
-import javax.validation.GroupDefinitionException;
-import javax.validation.GroupSequence;
-import javax.validation.ValidationException;
-import javax.validation.groups.Default;
 import java.util.*;
+
+import br.com.anteros.validation.api.GroupDefinitionException;
+import br.com.anteros.validation.api.GroupSequence;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.groups.Default;
 
 /**
  * Description: compute group order, based on the RI behavior as to guarantee

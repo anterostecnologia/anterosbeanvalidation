@@ -18,15 +18,14 @@ package br.com.anteros.bean.validation;
 
 import java.util.Map;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.MessageInterpolator;
-import javax.validation.TraversableResolver;
-
 import br.com.anteros.bean.validation.groups.Group;
 import br.com.anteros.bean.validation.groups.Groups;
 import br.com.anteros.bean.validation.model.MetaBean;
 import br.com.anteros.bean.validation.model.ValidationContext;
 import br.com.anteros.bean.validation.util.PathImpl;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.MessageInterpolator;
+import br.com.anteros.validation.api.TraversableResolver;
 
 /**
  * Description: JSR-303 {@link ValidationContext} extension. <br/>

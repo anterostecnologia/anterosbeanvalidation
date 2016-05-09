@@ -16,9 +16,6 @@
 package br.com.anteros.bean.validation;
 
 
-import javax.validation.ValidationException;
-import javax.validation.ValidationProviderResolver;
-import javax.validation.spi.ValidationProvider;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,6 +25,10 @@ import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.ValidationProviderResolver;
+import br.com.anteros.validation.api.spi.ValidationProvider;
 
 public class DefaultValidationProviderResolver implements ValidationProviderResolver {
 

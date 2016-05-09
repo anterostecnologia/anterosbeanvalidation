@@ -17,10 +17,9 @@ package br.com.anteros.bean.validation.constraints.validators;
 
 import java.util.List;
 
-import javax.validation.ConstraintValidator;
-
 import br.com.anteros.bean.validation.constraints.Mod10Check;
 import br.com.anteros.core.utils.ModUtil;
+import br.com.anteros.validation.api.ConstraintValidator;
 
 /**
  * Mod10 (Luhn algorithm implementation) Check validator

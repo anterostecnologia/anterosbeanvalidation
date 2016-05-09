@@ -15,10 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
 import br.com.anteros.bean.validation.constraints.NotEmpty;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;

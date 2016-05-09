@@ -15,10 +15,11 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-import javax.validation.constraints.DecimalMax;
 import java.math.BigDecimal;
+
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
+import br.com.anteros.validation.api.constraints.DecimalMax;
 
 /**
  * Check that the String being validated represents a number, and has a value

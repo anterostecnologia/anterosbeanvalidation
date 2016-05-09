@@ -15,11 +15,12 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.resolver;
 
-import javax.validation.Path;
-import javax.validation.TraversableResolver;
 import java.lang.annotation.ElementType;
 import java.util.HashMap;
 import java.util.Map;
+
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.TraversableResolver;
 
 /**
  * Cache results of a delegated traversable resovler to optimize calls

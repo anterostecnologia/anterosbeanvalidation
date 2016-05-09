@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import javax.validation.ConstraintValidatorContext;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 /**
  * ModCheckBase contains all shared methods and options used by Mod Check Validators

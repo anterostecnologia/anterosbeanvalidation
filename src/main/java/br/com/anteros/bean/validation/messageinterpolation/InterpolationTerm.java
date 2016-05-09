@@ -17,7 +17,7 @@ package br.com.anteros.bean.validation.messageinterpolation;
 
 import java.util.Locale;
 
-import javax.validation.MessageInterpolator;
+import br.com.anteros.validation.api.MessageInterpolator;
 
 /**
  * Helper class dealing with the interpolation of a single message parameter or expression extracted from a message

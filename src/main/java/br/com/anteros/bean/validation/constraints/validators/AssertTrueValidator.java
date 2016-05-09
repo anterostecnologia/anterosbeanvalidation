@@ -15,9 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-import javax.validation.constraints.AssertTrue;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
+import br.com.anteros.validation.api.constraints.AssertTrue;
 
 /**
  * Description: assert that value is true<br/>

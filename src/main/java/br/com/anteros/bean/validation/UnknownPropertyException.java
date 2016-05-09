@@ -15,7 +15,7 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.ValidationException;
+import br.com.anteros.validation.api.ValidationException;
 
 /**
  * Internal exception thrown when trying to access a property that doesn't exist

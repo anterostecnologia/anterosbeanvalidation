@@ -17,8 +17,7 @@
 package br.com.anteros.bean.validation;
 
 import br.com.anteros.bean.validation.xml.AnnotationProxyBuilder;
-
-import javax.validation.Payload;
+import br.com.anteros.validation.api.Payload;
 
 import java.lang.annotation.Annotation;
 import java.util.Set;

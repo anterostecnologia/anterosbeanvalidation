@@ -3,11 +3,10 @@ package br.com.anteros.bean.validation.constraints.validators;
 import java.util.Collection;
 import java.util.Date;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
 import br.com.anteros.bean.validation.constraints.Required;
 import br.com.anteros.core.utils.StringUtils;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 public class FieldRequiredValidator implements ConstraintValidator<Required, Object> {
 

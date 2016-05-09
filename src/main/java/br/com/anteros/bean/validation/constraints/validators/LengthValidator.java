@@ -15,10 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
 import br.com.anteros.bean.validation.constraints.Length;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 /**
  * Check that the character sequence length is between min and max.

@@ -15,10 +15,11 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-import javax.validation.constraints.Size;
 import java.lang.reflect.Array;
+
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
+import br.com.anteros.validation.api.constraints.Size;
 
 public class SizeValidatorForArrayOfChar extends SizeValidator
       implements ConstraintValidator<Size, char[]> {

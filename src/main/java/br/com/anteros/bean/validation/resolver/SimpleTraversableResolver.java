@@ -15,9 +15,10 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.resolver;
 
-import javax.validation.Path;
-import javax.validation.TraversableResolver;
 import java.lang.annotation.ElementType;
+
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.TraversableResolver;
 
 /**
  * Description: traversable resolver that does always resolve.<br/>

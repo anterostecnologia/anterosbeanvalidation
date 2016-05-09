@@ -25,20 +25,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.ConstraintValidatorFactory;
-import javax.validation.MessageInterpolator;
-import javax.validation.TraversableResolver;
-import javax.validation.Validation;
-import javax.validation.ValidationException;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
-import javax.validation.spi.ConfigurationState;
-
 import br.com.anteros.bean.validation.util.AccessStrategy;
 import br.com.anteros.bean.validation.xml.AnnotationIgnores;
 import br.com.anteros.bean.validation.xml.MetaConstraint;
 import br.com.anteros.core.utils.ArrayUtils;
 import br.com.anteros.core.utils.ClassUtils;
+import br.com.anteros.validation.api.ConstraintValidatorFactory;
+import br.com.anteros.validation.api.MessageInterpolator;
+import br.com.anteros.validation.api.TraversableResolver;
+import br.com.anteros.validation.api.Validation;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.Validator;
+import br.com.anteros.validation.api.ValidatorFactory;
+import br.com.anteros.validation.api.spi.ConfigurationState;
 
 /**
  * Description: a factory is a complete configurated object that can create

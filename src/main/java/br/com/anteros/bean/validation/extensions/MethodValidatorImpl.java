@@ -21,10 +21,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ValidationException;
-import javax.validation.metadata.ConstraintDescriptor;
-
 import br.com.anteros.bean.validation.AnterosFactoryContext;
 import br.com.anteros.bean.validation.BeanDescriptorImpl;
 import br.com.anteros.bean.validation.AnterosBeanValidator;
@@ -35,6 +31,9 @@ import br.com.anteros.bean.validation.groups.Group;
 import br.com.anteros.bean.validation.groups.Groups;
 import br.com.anteros.bean.validation.model.MetaBean;
 import br.com.anteros.bean.validation.util.ValidationHelper;
+import br.com.anteros.validation.api.ConstraintViolation;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
 
 /**
  * Description: experimental implementation of method-level-validation <br/>

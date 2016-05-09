@@ -15,11 +15,12 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-import javax.validation.constraints.DecimalMax;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
+import br.com.anteros.validation.api.constraints.DecimalMax;
 
 /** Description: validate that number-value of passed object is <= maxvalue<br/> */
 public class DecimalMaxValidatorForNumber

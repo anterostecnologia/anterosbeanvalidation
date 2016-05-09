@@ -21,9 +21,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.security.PrivilegedAction;
 
-import javax.validation.ValidatorFactory;
-
 import br.com.anteros.bean.validation.ConfigurationImpl;
+import br.com.anteros.validation.api.ValidatorFactory;
 
 /**
  * Description: utility methods to perform actions with AccessController or without.<br/>

@@ -26,12 +26,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.validation.ConstraintDefinitionException;
-import javax.validation.ConstraintValidator;
-import javax.validation.Payload;
-import javax.validation.ValidationException;
-import javax.validation.metadata.ConstraintDescriptor;
-
 import br.com.anteros.bean.validation.model.Validation;
 import br.com.anteros.bean.validation.model.ValidationContext;
 import br.com.anteros.bean.validation.model.ValidationListener;
@@ -39,6 +33,11 @@ import br.com.anteros.bean.validation.util.AccessStrategy;
 import br.com.anteros.bean.validation.util.NodeImpl;
 import br.com.anteros.bean.validation.util.PathImpl;
 import br.com.anteros.core.utils.ArrayUtils;
+import br.com.anteros.validation.api.ConstraintDefinitionException;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.Payload;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
 
 /**
  * Description: Adapter between Constraint (JSR303) and Validation (Core)<br/>

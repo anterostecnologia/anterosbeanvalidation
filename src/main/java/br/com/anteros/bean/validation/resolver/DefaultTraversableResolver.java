@@ -19,16 +19,15 @@ import java.lang.annotation.ElementType;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import javax.validation.Path;
-import javax.validation.TraversableResolver;
-
 import br.com.anteros.bean.validation.util.PrivilegedActions;
 import br.com.anteros.core.log.LogLevel;
 import br.com.anteros.core.log.Logger;
 import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.ClassUtils;
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.TraversableResolver;
 
-/** @see javax.validation.TraversableResolver */
+/** @see br.com.anteros.validation.api.TraversableResolver */
 public class DefaultTraversableResolver implements TraversableResolver, CachingRelevant {
     private static final Logger log = LoggerProvider.getInstance().getLogger(DefaultTraversableResolver.class.getName());
 

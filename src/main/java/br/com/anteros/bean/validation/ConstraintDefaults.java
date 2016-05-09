@@ -24,12 +24,11 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
-import javax.validation.ConstraintValidator;
-
 import br.com.anteros.bean.validation.resource.messages.AnterosDefaultConstraints;
 import br.com.anteros.core.log.LogLevel;
 import br.com.anteros.core.log.Logger;
 import br.com.anteros.core.log.LoggerProvider;
+import br.com.anteros.validation.api.ConstraintValidator;
 
 
 /**

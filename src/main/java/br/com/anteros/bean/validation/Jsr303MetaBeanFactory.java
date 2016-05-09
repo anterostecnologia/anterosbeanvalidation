@@ -24,12 +24,6 @@ import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.Constraint;
-import javax.validation.GroupDefinitionException;
-import javax.validation.GroupSequence;
-import javax.validation.ValidationException;
-import javax.validation.groups.Default;
-
 import br.com.anteros.bean.validation.groups.Group;
 import br.com.anteros.bean.validation.model.MetaBean;
 import br.com.anteros.bean.validation.model.MetaProperty;
@@ -42,6 +36,11 @@ import br.com.anteros.core.log.LogLevel;
 import br.com.anteros.core.log.Logger;
 import br.com.anteros.core.log.LoggerProvider;
 import br.com.anteros.core.utils.ClassUtils;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.GroupDefinitionException;
+import br.com.anteros.validation.api.GroupSequence;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.groups.Default;
 
 /**
  * Description: process the class annotations for JSR303 constraint validations to build the MetaBean with information

@@ -15,10 +15,11 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-import javax.validation.constraints.Past;
 import java.util.Date;
+
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
+import br.com.anteros.validation.api.constraints.Past;
 
 /**
  * Description: validate a date or calendar representing a date in the past<br/>

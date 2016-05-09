@@ -43,7 +43,7 @@ public interface Jsr303Features {
      */
     interface Bean extends Features.Bean {
         /**
-         * INFO: List of Group(Class) for {@link javax.validation.GroupSequence#value()}
+         * INFO: List of Group(Class) for {@link br.com.anteros.validation.api.GroupSequence#value()}
          * (redefined default group)
          **/
         String GROUP_SEQUENCE = "GroupSequence";

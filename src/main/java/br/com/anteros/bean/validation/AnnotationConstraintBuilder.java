@@ -30,18 +30,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.validation.ConstraintDeclarationException;
-import javax.validation.ConstraintValidator;
-import javax.validation.OverridesAttribute;
-import javax.validation.Payload;
-import javax.validation.ReportAsSingleViolation;
-
 import br.com.anteros.bean.validation.groups.GroupsComputer;
 import br.com.anteros.bean.validation.util.AccessStrategy;
 import br.com.anteros.bean.validation.xml.AnnotationProxyBuilder;
 import br.com.anteros.core.log.LogLevel;
 import br.com.anteros.core.log.Logger;
 import br.com.anteros.core.log.LoggerProvider;
+import br.com.anteros.validation.api.ConstraintDeclarationException;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.OverridesAttribute;
+import br.com.anteros.validation.api.Payload;
+import br.com.anteros.validation.api.ReportAsSingleViolation;
 
 /**
  * Description: helper class that builds a {@link ConstraintValidation} or its

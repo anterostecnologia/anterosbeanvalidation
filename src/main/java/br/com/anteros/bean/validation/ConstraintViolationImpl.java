@@ -15,11 +15,12 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Path;
-import javax.validation.metadata.ConstraintDescriptor;
 import java.io.Serializable;
 import java.lang.annotation.ElementType;
+
+import br.com.anteros.validation.api.ConstraintViolation;
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
 
 /**
  * Description: Describe a constraint validation defect.<br/>

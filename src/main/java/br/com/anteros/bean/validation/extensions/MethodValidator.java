@@ -15,11 +15,12 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.extensions;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Set;
+
+import br.com.anteros.validation.api.ConstraintViolation;
+import br.com.anteros.validation.api.Validator;
 
 /**
  * Description: Appendix C. Proposal for method-level validation.

@@ -15,7 +15,7 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.ValidationException;
+import br.com.anteros.validation.api.ValidationException;
 
 /**
  * Internal exception thrown when trying to validate a value for a property for which it is not assignment-compatible.

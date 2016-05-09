@@ -17,7 +17,7 @@ package br.com.anteros.bean.validation.messageinterpolation;
 
 import java.util.Arrays;
 
-import javax.validation.MessageInterpolator.Context;
+import br.com.anteros.validation.api.MessageInterpolator.Context;
 
 
 public class ParameterTermResolver implements TermResolver {

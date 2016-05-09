@@ -15,10 +15,11 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.ConstraintValidator;
 import java.lang.annotation.Annotation;
 import java.util.HashMap;
 import java.util.Map;
+
+import br.com.anteros.validation.api.ConstraintValidator;
 
 /**
  * Description: hold the relationship annotation->validatedBy[] ConstraintValidator classes

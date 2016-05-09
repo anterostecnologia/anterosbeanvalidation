@@ -17,9 +17,9 @@ package br.com.anteros.bean.validation;
 
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Valid;
-import javax.validation.Validator;
+import br.com.anteros.validation.api.ConstraintViolation;
+import br.com.anteros.validation.api.Valid;
+import br.com.anteros.validation.api.Validator;
 
 /**
  * Per the bean validation spec, {@link Valid} is not honored by the
@@ -47,7 +47,7 @@ public interface CascadingPropertyValidator extends Validator {
      * @param groups
      * @return the resulting {@link Set} of {@link ConstraintViolation}s.
      */
-    <T extends Object> java.util.Set<javax.validation.ConstraintViolation<T>> validateProperty(T object,
+    <T extends Object> java.util.Set<br.com.anteros.validation.api.ConstraintViolation<T>> validateProperty(T object,
         String propertyName, boolean cascade, java.lang.Class<?>... groups);
 
     /**
@@ -63,6 +63,6 @@ public interface CascadingPropertyValidator extends Validator {
      * @param groups
      * @return the resulting {@link Set} of {@link ConstraintViolation}s.
      */
-    <T extends Object> java.util.Set<javax.validation.ConstraintViolation<T>> validateValue(
+    <T extends Object> java.util.Set<br.com.anteros.validation.api.ConstraintViolation<T>> validateValue(
         java.lang.Class<T> beanType, String propertyName, Object value, boolean cascade, java.lang.Class<?>... groups);
 }

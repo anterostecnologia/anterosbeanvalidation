@@ -1,11 +1,10 @@
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
 import br.com.anteros.bean.validation.ConstraintValidatorContextImpl;
 import br.com.anteros.bean.validation.GroupValidationContext;
 import br.com.anteros.bean.validation.constraints.ELAssert;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 /**
  * Validator for the {@link ELAssert} constraint annotation.

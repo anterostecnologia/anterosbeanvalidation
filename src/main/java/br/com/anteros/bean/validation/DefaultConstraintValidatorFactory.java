@@ -15,9 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorFactory;
-import javax.validation.ValidationException;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorFactory;
+import br.com.anteros.validation.api.ValidationException;
 
 
 /**

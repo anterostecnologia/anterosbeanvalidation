@@ -21,11 +21,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Member;
 import java.lang.reflect.Method;
 
-import javax.validation.ValidationException;
-
 import br.com.anteros.bean.validation.util.AccessStrategy;
 import br.com.anteros.bean.validation.util.FieldAccess;
 import br.com.anteros.bean.validation.util.MethodAccess;
+import br.com.anteros.validation.api.ValidationException;
 
 /**
  * Description: hold parsed information from xml to complete MetaBean later<br/>

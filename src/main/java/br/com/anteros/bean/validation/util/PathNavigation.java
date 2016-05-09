@@ -18,9 +18,8 @@ package br.com.anteros.bean.validation.util;
 import java.io.StringWriter;
 import java.text.ParsePosition;
 
-import javax.validation.ValidationException;
-
 import br.com.anteros.bean.validation.util.translate.StringEscapeUtils;
+import br.com.anteros.validation.api.ValidationException;
 
 /**
  * Defines a path navigation algorithm and a means of interacting with same.

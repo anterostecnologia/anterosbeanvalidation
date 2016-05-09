@@ -3,12 +3,11 @@ package br.com.anteros.bean.validation.constraints.validators;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.validation.ConstraintDeclarationException;
-
 import br.com.anteros.el.api.ELContext;
 import br.com.anteros.el.api.ExpressionFactory;
 import br.com.anteros.el.api.ValueExpression;
 import br.com.anteros.el.util.SimpleContext;
+import br.com.anteros.validation.api.ConstraintDeclarationException;
 
 /**
  * Context used by validator implementations dealing with script expressions.

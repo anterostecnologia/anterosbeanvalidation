@@ -26,8 +26,8 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.Payload;
 
 /**
  * Validate a rich text value provided by the user to ensure that it contains no malicious code, such as embedded

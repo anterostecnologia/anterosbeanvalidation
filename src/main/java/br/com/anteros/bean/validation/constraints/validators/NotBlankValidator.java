@@ -15,10 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
 import br.com.anteros.bean.validation.constraints.NotBlank;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 /**
  * Check that a character sequence's (e.g. string) trimmed length is not empty.

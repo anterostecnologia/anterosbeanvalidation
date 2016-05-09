@@ -17,12 +17,11 @@ package br.com.anteros.bean.validation.resolver;
 
 import java.lang.annotation.ElementType;
 
-import javax.validation.Path;
-import javax.validation.TraversableResolver;
-
 import br.com.anteros.persistence.util.AnterosPersistenceHelper;
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.TraversableResolver;
 
-/** @see javax.validation.TraversableResolver */
+/** @see br.com.anteros.validation.api.TraversableResolver */
 public class AnterosPersistenceTraversableResolver implements TraversableResolver, CachingRelevant {
 
 	/**

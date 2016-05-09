@@ -22,13 +22,12 @@ import java.util.IllegalFormatException;
 import java.util.Iterator;
 import java.util.Map;
 
-import javax.validation.ValidationException;
-
 import br.com.anteros.core.metadata.beans.FeatureDescriptor;
 import br.com.anteros.el.api.ELContext;
 import br.com.anteros.el.api.ELException;
 import br.com.anteros.el.api.ELResolver;
 import br.com.anteros.el.api.PropertyNotFoundException;
+import br.com.anteros.validation.api.ValidationException;
 
 
 public class RootResolver extends ELResolver {

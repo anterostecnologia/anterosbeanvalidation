@@ -19,11 +19,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.validation.metadata.ConstraintDescriptor;
-import javax.validation.metadata.ElementDescriptor;
-
 import br.com.anteros.bean.validation.model.MetaBean;
 import br.com.anteros.bean.validation.model.Validation;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
+import br.com.anteros.validation.api.metadata.ElementDescriptor;
 
 /**
  * Description: MetaData class<br/>

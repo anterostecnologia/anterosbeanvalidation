@@ -17,9 +17,8 @@ package br.com.anteros.bean.validation.util;
 
 
 import br.com.anteros.bean.validation.ConstraintValidatorContextImpl;
-
-import javax.validation.ConstraintValidatorContext;
-import javax.validation.ConstraintValidatorContext.ConstraintViolationBuilder.NodeContextBuilder;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
+import br.com.anteros.validation.api.ConstraintValidatorContext.ConstraintViolationBuilder.NodeContextBuilder;
 
 /**
  * Description: Implementation of {@link NodeContextBuilder}.<br/>

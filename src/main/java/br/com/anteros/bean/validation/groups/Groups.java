@@ -16,9 +16,10 @@
 package br.com.anteros.bean.validation.groups;
 
 
-import javax.validation.GroupDefinitionException;
 import java.util.LinkedList;
 import java.util.List;
+
+import br.com.anteros.validation.api.GroupDefinitionException;
 
 /**
  * Defines the order to validate groups during validation.

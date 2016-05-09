@@ -17,9 +17,6 @@ package br.com.anteros.bean.validation.constraints.validators;
 
 import java.util.Iterator;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -28,6 +25,8 @@ import org.jsoup.safety.Cleaner;
 import org.jsoup.safety.Whitelist;
 
 import br.com.anteros.bean.validation.constraints.SafeHtml;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 /**
  * Validate that the string does not contain malicious code.

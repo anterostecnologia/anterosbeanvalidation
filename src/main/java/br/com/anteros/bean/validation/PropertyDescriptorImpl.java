@@ -15,10 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation;
 
-import javax.validation.metadata.PropertyDescriptor;
-
 import br.com.anteros.bean.validation.model.Features;
 import br.com.anteros.bean.validation.model.MetaProperty;
+import br.com.anteros.validation.api.metadata.PropertyDescriptor;
 
 /**
  * Description: {@link PropertyDescriptor} implementation.<br/>

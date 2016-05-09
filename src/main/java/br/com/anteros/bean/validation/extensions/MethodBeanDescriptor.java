@@ -15,10 +15,11 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.extensions;
 
-import javax.validation.metadata.BeanDescriptor;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Set;
+
+import br.com.anteros.validation.api.metadata.BeanDescriptor;
 
 /**
  * Description: Provides method/constructor-related constraint information

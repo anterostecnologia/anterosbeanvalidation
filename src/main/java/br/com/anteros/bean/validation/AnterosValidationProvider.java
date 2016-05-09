@@ -18,14 +18,13 @@
 import java.security.AccessController;
 import java.security.PrivilegedAction;
 
-import javax.validation.Configuration;
-import javax.validation.ValidationException;
-import javax.validation.ValidatorFactory;
-import javax.validation.spi.BootstrapState;
-import javax.validation.spi.ConfigurationState;
-import javax.validation.spi.ValidationProvider;
-
 import br.com.anteros.core.utils.ClassUtils;
+import br.com.anteros.validation.api.Configuration;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.ValidatorFactory;
+import br.com.anteros.validation.api.spi.BootstrapState;
+import br.com.anteros.validation.api.spi.ConfigurationState;
+import br.com.anteros.validation.api.spi.ValidationProvider;
 
 /**
  * Description: Implementation of {@link ValidationProvider} for jsr303
@@ -66,7 +65,7 @@ public class AnterosValidationProvider implements ValidationProvider<AnterosVali
     /**
      * {@inheritDoc}
      * 
-     * @throws javax.validation.ValidationException
+     * @throws br.com.anteros.validation.api.ValidationException
      *             if the ValidatorFactory cannot be built
      */
     public ValidatorFactory buildValidatorFactory(final ConfigurationState configuration) {

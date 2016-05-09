@@ -15,11 +15,11 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.util;
 
-import javax.validation.Path;
-import javax.validation.Path.Node;
-
 import java.io.Serializable;
 import java.util.Map;
+
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.Path.Node;
 
 /**
  * Description: a node (property) as part of a Path.

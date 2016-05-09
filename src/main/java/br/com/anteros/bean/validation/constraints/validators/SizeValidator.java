@@ -15,8 +15,8 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.constraints.validators;
 
-import javax.validation.ValidationException;
-import javax.validation.constraints.Size;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.constraints.Size;
 
 /**
  * Description: Abstract validator impl. for @Size annotation<br/>

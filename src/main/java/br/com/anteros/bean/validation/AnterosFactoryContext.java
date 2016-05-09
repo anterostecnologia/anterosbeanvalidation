@@ -21,16 +21,15 @@ import java.security.PrivilegedAction;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.validation.ConstraintValidatorFactory;
-import javax.validation.MessageInterpolator;
-import javax.validation.TraversableResolver;
-import javax.validation.ValidationException;
-import javax.validation.Validator;
-import javax.validation.ValidatorContext;
-
 import br.com.anteros.bean.validation.util.SecureActions;
 import br.com.anteros.core.utils.ReflectionUtils;
 import br.com.anteros.core.utils.StringUtils;
+import br.com.anteros.validation.api.ConstraintValidatorFactory;
+import br.com.anteros.validation.api.MessageInterpolator;
+import br.com.anteros.validation.api.TraversableResolver;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.Validator;
+import br.com.anteros.validation.api.ValidatorContext;
 
 /**
  * Description: Represents the context that is used to create

@@ -15,7 +15,7 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.messageinterpolation;
 
-import javax.validation.MessageInterpolator;
+import br.com.anteros.validation.api.MessageInterpolator;
 
 
 public interface TermResolver {

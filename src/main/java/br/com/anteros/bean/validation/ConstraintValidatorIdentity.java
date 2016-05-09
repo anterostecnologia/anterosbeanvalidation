@@ -16,8 +16,8 @@
 
 package br.com.anteros.bean.validation;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.Path;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.Path;
 
 /**
  * Class that stores the needed properties to ensure that a validation is not

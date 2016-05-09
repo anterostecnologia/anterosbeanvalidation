@@ -15,9 +15,8 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.groups;
 
-import javax.validation.groups.Default;
-
 import br.com.anteros.core.utils.ObjectUtils;
+import br.com.anteros.validation.api.groups.Default;
 
 /**
  * Immutable object that wraps an interface representing a single group.

@@ -20,15 +20,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-import javax.validation.Path;
-import javax.validation.ValidationException;
-
 import br.com.anteros.bean.validation.model.ValidationListener;
 import br.com.anteros.bean.validation.util.NodeBuilderDefinedContextImpl;
 import br.com.anteros.bean.validation.util.NodeImpl;
 import br.com.anteros.bean.validation.util.PathImpl;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.ValidationException;
 
 /**
  * Description: Short-lived {@link ConstraintValidatorContext} implementation passed by

@@ -21,9 +21,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
-import javax.validation.Constraint;
-import javax.validation.Valid;
-
 import br.com.anteros.bean.validation.AnterosFactoryContext;
 import br.com.anteros.bean.validation.AppendValidation;
 import br.com.anteros.bean.validation.ConstraintAnnotationAttributes;
@@ -32,6 +29,8 @@ import br.com.anteros.bean.validation.Validate;
 import br.com.anteros.bean.validation.model.Validation;
 import br.com.anteros.bean.validation.util.AccessStrategy;
 import br.com.anteros.core.utils.ClassUtils;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.Valid;
 
 /**
  * Description: extension to validate parameters/return values of

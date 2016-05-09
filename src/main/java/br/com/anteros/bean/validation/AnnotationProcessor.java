@@ -28,13 +28,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.validation.Constraint;
-import javax.validation.ConstraintValidator;
-import javax.validation.UnexpectedTypeException;
-import javax.validation.Valid;
-import javax.validation.ValidationException;
-import javax.validation.groups.Default;
-
 import br.com.anteros.bean.validation.model.Features;
 import br.com.anteros.bean.validation.model.MetaBean;
 import br.com.anteros.bean.validation.model.MetaProperty;
@@ -44,6 +37,12 @@ import br.com.anteros.bean.validation.util.SecureActions;
 import br.com.anteros.core.utils.ArrayUtils;
 import br.com.anteros.core.utils.ClassUtils;
 import br.com.anteros.core.utils.TypeUtils;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.UnexpectedTypeException;
+import br.com.anteros.validation.api.Valid;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.groups.Default;
 
 /**
  * Description: implements uniform handling of JSR303 {@link Constraint}

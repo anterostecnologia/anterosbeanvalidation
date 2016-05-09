@@ -17,10 +17,9 @@ package br.com.anteros.bean.validation.constraints.validators;
 
 import java.net.MalformedURLException;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
 import br.com.anteros.bean.validation.constraints.URL;
+import br.com.anteros.validation.api.ConstraintValidator;
+import br.com.anteros.validation.api.ConstraintValidatorContext;
 
 /**
  * Validate that the character sequence (e.g. string) is a valid URL.

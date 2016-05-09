@@ -15,10 +15,10 @@
  *******************************************************************************/
  package br.com.anteros.bean.validation;
 
-import javax.validation.Configuration;
-import javax.validation.ValidatorContext;
-import javax.validation.ValidatorFactory;
-import javax.validation.spi.ConfigurationState;
+import br.com.anteros.validation.api.Configuration;
+import br.com.anteros.validation.api.ValidatorContext;
+import br.com.anteros.validation.api.ValidatorFactory;
+import br.com.anteros.validation.api.spi.ConfigurationState;
 
 /**
  * Description: Uniquely identify Apache BVal in the Bean Validation bootstrap

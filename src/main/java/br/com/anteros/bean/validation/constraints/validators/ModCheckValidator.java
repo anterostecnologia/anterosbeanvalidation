@@ -17,11 +17,10 @@ package br.com.anteros.bean.validation.constraints.validators;
 
 import java.util.List;
 
-import javax.validation.ConstraintValidator;
-
 import br.com.anteros.bean.validation.constraints.ModCheck;
 import br.com.anteros.bean.validation.constraints.ModCheck.ModType;
 import br.com.anteros.core.utils.ModUtil;
+import br.com.anteros.validation.api.ConstraintValidator;
 
 /**
  * Mod check validator for MOD10 and MOD11 algorithms

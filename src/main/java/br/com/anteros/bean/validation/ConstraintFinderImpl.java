@@ -23,15 +23,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import javax.validation.metadata.ConstraintDescriptor;
-import javax.validation.metadata.ElementDescriptor;
-import javax.validation.metadata.ElementDescriptor.ConstraintFinder;
-import javax.validation.metadata.Scope;
-
 import br.com.anteros.bean.validation.groups.Group;
 import br.com.anteros.bean.validation.groups.Groups;
 import br.com.anteros.bean.validation.groups.GroupsComputer;
 import br.com.anteros.bean.validation.model.MetaBean;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
+import br.com.anteros.validation.api.metadata.ElementDescriptor;
+import br.com.anteros.validation.api.metadata.Scope;
+import br.com.anteros.validation.api.metadata.ElementDescriptor.ConstraintFinder;
 
 /**
  * Description: Implementation of the fluent {@link ConstraintFinder} interface.<br/>

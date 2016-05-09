@@ -7,10 +7,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
-
 import br.com.anteros.bean.validation.constraints.validators.IEValidator;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.Payload;
 
 /**
  * Restrição que pode ser associada a classes que contenham um objeto que

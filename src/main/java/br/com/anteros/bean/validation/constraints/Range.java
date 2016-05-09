@@ -18,12 +18,13 @@ package br.com.anteros.bean.validation.constraints;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
-import javax.validation.Constraint;
-import javax.validation.OverridesAttribute;
-import javax.validation.Payload;
-import javax.validation.ReportAsSingleViolation;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.OverridesAttribute;
+import br.com.anteros.validation.api.Payload;
+import br.com.anteros.validation.api.ReportAsSingleViolation;
+import br.com.anteros.validation.api.constraints.Max;
+import br.com.anteros.validation.api.constraints.Min;
 
 import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
 import static java.lang.annotation.ElementType.CONSTRUCTOR;

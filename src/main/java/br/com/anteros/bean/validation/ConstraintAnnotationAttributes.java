@@ -24,13 +24,12 @@ import java.security.PrivilegedAction;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.validation.Constraint;
-import javax.validation.ConstraintDefinitionException;
-import javax.validation.Payload;
-import javax.validation.ValidationException;
-
 import br.com.anteros.bean.validation.util.SecureActions;
 import br.com.anteros.core.utils.TypeUtils;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.ConstraintDefinitionException;
+import br.com.anteros.validation.api.Payload;
+import br.com.anteros.validation.api.ValidationException;
 
 /**
  * Defines the well-known attributes of {@link Constraint} annotations.

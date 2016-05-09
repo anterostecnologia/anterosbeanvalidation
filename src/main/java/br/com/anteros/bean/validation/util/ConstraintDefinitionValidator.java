@@ -15,10 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.bean.validation.util;
 
-import javax.validation.Constraint;
-import javax.validation.ConstraintDefinitionException;
-
 import br.com.anteros.bean.validation.ConstraintAnnotationAttributes;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.ConstraintDefinitionException;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;

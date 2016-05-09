@@ -12,10 +12,9 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
-
 import br.com.anteros.bean.validation.constraints.validators.ELAssertValidator;
+import br.com.anteros.validation.api.Constraint;
+import br.com.anteros.validation.api.Payload;
 
 @Target({METHOD, FIELD, ANNOTATION_TYPE, PARAMETER, TYPE})
 @Retention(RUNTIME)

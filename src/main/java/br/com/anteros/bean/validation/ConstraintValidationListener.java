@@ -20,14 +20,13 @@ import java.lang.annotation.ElementType;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.MessageInterpolator;
-import javax.validation.Path;
-import javax.validation.metadata.ConstraintDescriptor;
-
 import br.com.anteros.bean.validation.model.ValidationContext;
 import br.com.anteros.bean.validation.model.ValidationListener;
 import br.com.anteros.bean.validation.util.PathImpl;
+import br.com.anteros.validation.api.ConstraintViolation;
+import br.com.anteros.validation.api.MessageInterpolator;
+import br.com.anteros.validation.api.Path;
+import br.com.anteros.validation.api.metadata.ConstraintDescriptor;
 
 /**
  * Description: JSR-303 {@link ValidationListener} implementation; provides {@link ConstraintViolation}s.<br/>

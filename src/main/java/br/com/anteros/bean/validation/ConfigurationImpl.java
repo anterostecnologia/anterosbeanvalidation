@@ -25,20 +25,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.validation.ConstraintValidatorFactory;
-import javax.validation.MessageInterpolator;
-import javax.validation.TraversableResolver;
-import javax.validation.ValidationException;
-import javax.validation.ValidationProviderResolver;
-import javax.validation.ValidatorFactory;
-import javax.validation.spi.BootstrapState;
-import javax.validation.spi.ConfigurationState;
-import javax.validation.spi.ValidationProvider;
-
 import br.com.anteros.bean.validation.resolver.DefaultTraversableResolver;
 import br.com.anteros.bean.validation.util.SecureActions;
 import br.com.anteros.core.log.Logger;
 import br.com.anteros.core.log.LoggerProvider;
+import br.com.anteros.validation.api.ConstraintValidatorFactory;
+import br.com.anteros.validation.api.MessageInterpolator;
+import br.com.anteros.validation.api.TraversableResolver;
+import br.com.anteros.validation.api.ValidationException;
+import br.com.anteros.validation.api.ValidationProviderResolver;
+import br.com.anteros.validation.api.ValidatorFactory;
+import br.com.anteros.validation.api.spi.BootstrapState;
+import br.com.anteros.validation.api.spi.ConfigurationState;
+import br.com.anteros.validation.api.spi.ValidationProvider;
 
 
 /**
