@@ -28,7 +28,7 @@ public class AnterosValidationMessages_ptBR implements AnterosBundle {
 		messages.put("javax.validation.constraints.Size.message","{label} tamanho deve estar entre {min} e {max}");
 
 		messages.put("br.com.anteros.bean.validation.constraints.CreditCardNumber.message","n\u00FAmero de Cart\u00E3o de Cr\u00E9dito inv\u00E1lido");
-		messages.put("br.com.anteros.bean.validation.constraints.Email.message","n\u00E3o \u00E9 um endere\u00E7o de e-mail");
+		messages.put("br.com.anteros.bean.validation.constraints.Email.message","Endere\u00E7o de e-mail inv\u00E1lido");
 		messages.put("br.com.anteros.bean.validation.constraints.Length.message","{label} tamanho deve estar entre {min} e {max}");
 		messages.put("br.com.anteros.bean.validation.constraints.NotBlank.message","{label} n\u00E3o pode estar vazio");
 		messages.put("br.com.anteros.bean.validation.constraints.NotEmpty.message","{label} n\u00E3o pode estar vazio");
