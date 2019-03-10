@@ -343,7 +343,13 @@ public class ConstraintValidation<T extends Annotation> implements Validation, C
      */
     @SuppressWarnings("unchecked")
     public Set<ConstraintDescriptor<?>> getComposingConstraints() {
-        return composedConstraints == null ? Collections.EMPTY_SET : composedConstraints;
+    	Set<ConstraintDescriptor<?>> result = new HashSet<ConstraintDescriptor<?>>();
+    	if (composedConstraints == null)
+    		return Collections.EMPTY_SET;
+        for (ConstraintValidation<?> cp : composedConstraints) {
+        	result.add(cp);
+        }
+        return result;
     }
 
     /**
