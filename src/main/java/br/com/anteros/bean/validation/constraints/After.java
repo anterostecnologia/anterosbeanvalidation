@@ -25,7 +25,7 @@ import br.com.anteros.validation.api.Payload;
 public @interface After {
     String value();
 
-    String message() default "{br.com.anteros.bean.validation.constraints.AFTER}";
+    String message() default "{br.com.anteros.bean.validation.constraints.AFTER.message}";
 
     Class<?>[] groups() default {};
 

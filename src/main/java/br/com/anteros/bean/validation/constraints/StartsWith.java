@@ -21,7 +21,7 @@ import br.com.anteros.validation.api.Payload;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 public @interface   StartsWith {
-    String message() default "{br.com.anteros.bean.validation.constraints.STARTS_WITH}";
+    String message() default "{br.com.anteros.bean.validation.constraints.STARTS_WITH.message}";
 
     String[] value();
     boolean ignoreCase() default false;

@@ -23,7 +23,7 @@ import br.com.anteros.validation.api.Payload;
 public @interface Parseable {
     ParseableType value();
 
-    String message() default "{br.com.anteros.bean.validation.constraints.PARSEABLE}";
+    String message() default "{br.com.anteros.bean.validation.constraints.PARSEABLE.message}";
 
     Class<?>[] groups() default {};
 

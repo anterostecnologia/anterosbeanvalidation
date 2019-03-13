@@ -21,7 +21,7 @@ import br.com.anteros.validation.api.Payload;
 @Constraint(validatedBy = OneOfStringsValidator.class)
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 public @interface OneOfStrings {
-    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_STRINGS}";
+    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_STRINGS.message}";
 
     String[] value() default {};
 

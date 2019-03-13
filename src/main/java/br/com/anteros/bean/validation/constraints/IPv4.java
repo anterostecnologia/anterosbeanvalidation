@@ -24,7 +24,7 @@ import br.com.anteros.validation.api.Payload;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 public @interface IPv4 {
-    String message() default "{br.com.anteros.bean.validation.constraints.IPV4}";
+    String message() default "{br.com.anteros.bean.validation.constraints.IPV4.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

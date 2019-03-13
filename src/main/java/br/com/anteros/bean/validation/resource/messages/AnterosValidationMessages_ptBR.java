@@ -60,53 +60,54 @@ public class AnterosValidationMessages_ptBR implements AnterosBundle {
 		messages.put("br.com.anteros.bean.validation.constraints.TituloEleitoral.message",
 				"N\u00e3o \u00e9 um Titulo Eleitoral v\u00e1lido");
 
-		messages.put("br.com.anteros.bean.validation.constraints.ALPHA",
+		messages.put("br.com.anteros.bean.validation.constraints.ALPHA.message",
 				"Validated value '${validatedValue}' doesn't meet the conditions. The string needs to contain only unicode letters.");
-		messages.put("br.com.anteros.bean.validation.constraints.ALPHA_NUMERIC",
+		messages.put("br.com.anteros.bean.validation.constraints.ALPHA_NUMERIC.message",
 				"Validated value '${validatedValue}' doesn't meet the conditions. The string needs to contain only unicode letters or digits.");
-		messages.put("br.com.anteros.bean.validation.constraints.ALPHA_NUMERIC_SPACE",
+		messages.put("br.com.anteros.bean.validation.constraints.ALPHA_NUMERIC_SPACE.message",
 				"Validated value '${validatedValue}' doesn't meet the conditions. The string needs to contain only unicode letters, digits or spaces (' ').");
-		messages.put("br.com.anteros.bean.validation.constraints.ALPHA_SPACE",
+		messages.put("br.com.anteros.bean.validation.constraints.ALPHA_SPACE.message",
 				"Validated value '${validatedValue}' doesn't meet the conditions. The string needs to contain only unicode letters or spaces (' ').");
-		messages.put("br.com.anteros.bean.validation.constraints.ASCII_PRINTABLE",
+		messages.put("br.com.anteros.bean.validation.constraints.ASCII_PRINTABLE.message",
 				"Validated value '${validatedValue}' doesn't meet the conditions. The string needs to contain only printable ascii characters.");
-		messages.put("br.com.anteros.bean.validation.constraints.IPV4",
+		messages.put("br.com.anteros.bean.validation.constraints.IPV4.message",
 				"Validated value '${validatedValue}' doesn't meet the required conditions. The string needs to represent a valid IPv4 address.");
-		messages.put("br.com.anteros.bean.validation.constraints.IPV6",
+		messages.put("br.com.anteros.bean.validation.constraints.IPV6.message",
 				"Validated value '${validatedValue}' doesn't meet the required conditions. The string needs to represent a valid IPv6 address.");
-		messages.put("br.com.anteros.bean.validation.constraints.LOWERCASE",
+		messages.put("br.com.anteros.bean.validation.constraints.LOWERCASE.message",
 				"Validated value '${validatedValue}' doesn't meet the required conditions. The string needs to contain only lower case letters.");
-		messages.put("br.com.anteros.bean.validation.constraints.NUMERIC",
+		messages.put("br.com.anteros.bean.validation.constraints.NUMERIC.message",
 				"Validated value '${validatedValue}' doesn't meet the required conditions. The string needs to ne a number.");
-		messages.put("br.com.anteros.bean.validation.constraints.STARTS_WITH",
+		messages.put("br.com.anteros.bean.validation.constraints.STARTS_WITH.message",
 				"Validated value '${validatedValue}' doesn't meet the required conditions. The string needs to start with the give prefix(es): '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.ENDS_WITH",
+		messages.put("br.com.anteros.bean.validation.constraints.ENDS_WITH.message",
 				"Validated value '${validatedValue}' doesn't meet the required conditions. The string needs to end with the give suffix(es): '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.UPPERCASE",
+		messages.put("br.com.anteros.bean.validation.constraints.UPPERCASE.message",
 				"Validated value '${validatedValue}' doesn't meet the required conditions. The string needs to contain only upper case letters.");
-		messages.put("br.com.anteros.bean.validation.constraints.PARSEABLE",
+		messages.put("br.com.anteros.bean.validation.constraints.PARSEABLE.message",
 				"Validated value '${validatedValue == null ? '<null>' : validatedValue}' cannot be parsed to '${value.getFriendlyName()}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.PASSWORD",
+		messages.put("br.com.anteros.bean.validation.constraints.PASSWORD.message",
 				"Validate value '${validatedValue}' doesn't meet the password security policies.");
 
-		messages.put("br.com.anteros.bean.validation.constraints.INSTANCEOF",
+		messages.put("br.com.anteros.bean.validation.constraints.INSTANCEOF.message",
 				"Validated value '${validatedValue}' is an instance of the required classes: '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.NOT_INSTANCEOF",
+		messages.put("br.com.anteros.bean.validation.constraints.NOT_INSTANCEOF.message",
 				"Validated value '${validatedValue}' is not an instance of the excluded classes: '{value}'");
 		
-		messages.put("br.com.anteros.bean.validation.constraints.EXP_JS","Validated value '${validatedValue}' doesn't match the condition imposed by the Java Script expression: '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.IS_DATE","Validated value '${validatedValue}' doesn't match the format '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.AFTER","Validated value '${validatedValue}' deve ser maior que '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.BEFORE","Validated value '${validatedValue}' deve ser menor que '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.EXP_JS.message","Validated value '${validatedValue}' doesn't match the condition imposed by the Java Script expression: '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.IS_DATE.message","Validated value '${validatedValue}' doesn't match the format '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.AFTER.message","Validated value '${validatedValue}' deve ser maior que '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.BEFORE.message","Validated value '${validatedValue}' deve ser menor que '{value}'.");
 
-		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_CHARS","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_DOUBLES","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_INTEGERS","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_LONGS","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
-		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_STRINGS","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_CHARS.message","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_DOUBLES.message","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_INTEGERS.message","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_LONGS.message","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
+		messages.put("br.com.anteros.bean.validation.constraints.ONE_OF_STRINGS.message","Validated value '${validatedValue}' cannot be found in the list: '{value}'.");
 		
-		messages.put("br.com.anteros.bean.validation.constraints.DURATION_MAX","deve ser menor que${inclusive == true ? ' ou igual a' : ''}${dias == 0 ? '' : dias == 1 ? ' 1 dia' : ' ' += dias += ' dias'}${horas == 0 ? '' : horas == 1 ? ' 1 hora' : ' ' += horas += ' horas'}${minutos == 0 ? '' : minutos == 1 ? ' 1 minuto' : ' ' += minutos += ' minutos'}${segundos == 0 ? '' : segundos == 1 ? ' 1 segundo' : ' ' += segundos += ' segundos'}${miliss == 0 ? '' : miliss == 1 ? ' 1 mili' : ' ' += miliss += ' miliss'}${nanos == 0 ? '' : nanos == 1 ? ' 1 nano' : ' ' += nanos += ' nanos'}");
-		messages.put("br.com.anteros.bean.validation.constraints.DURATION_MIN","deve ser maior que${inclusive == true ? ' ou igual a' : ''}${dias == 0 ? '' : dias == 1 ? ' 1 dia' : ' ' += dias += ' dias'}${horas == 0 ? '' : horas == 1 ? ' 1 hora' : ' ' += horas += ' horas'}${minutos == 0 ? '' : minutos == 1 ? ' 1 minuto' : ' ' += minutos += ' minutos'}${segundos == 0 ? '' : segundos == 1 ? ' 1 segundo' : ' ' += segundos += ' segundos'}${miliss == 0 ? '' : miliss == 1 ? ' 1 mili' : ' ' += miliss += ' miliss'}${nanos == 0 ? '' : nanos == 1 ? ' 1 nano' : ' ' += nanos += ' nanos'}");
+		messages.put("br.com.anteros.bean.validation.constraints.DURATION_MAX.message","deve ser menor que${inclusive == true ? ' ou igual a' : ''}${dias == 0 ? '' : dias == 1 ? ' 1 dia' : ' ' += dias += ' dias'}${horas == 0 ? '' : horas == 1 ? ' 1 hora' : ' ' += horas += ' horas'}${minutos == 0 ? '' : minutos == 1 ? ' 1 minuto' : ' ' += minutos += ' minutos'}${segundos == 0 ? '' : segundos == 1 ? ' 1 segundo' : ' ' += segundos += ' segundos'}${miliss == 0 ? '' : miliss == 1 ? ' 1 mili' : ' ' += miliss += ' miliss'}${nanos == 0 ? '' : nanos == 1 ? ' 1 nano' : ' ' += nanos += ' nanos'}");
+		messages.put("br.com.anteros.bean.validation.constraints.DURATION_MIN.message","deve ser maior que${inclusive == true ? ' ou igual a' : ''}${dias == 0 ? '' : dias == 1 ? ' 1 dia' : ' ' += dias += ' dias'}${horas == 0 ? '' : horas == 1 ? ' 1 hora' : ' ' += horas += ' horas'}${minutos == 0 ? '' : minutos == 1 ? ' 1 minuto' : ' ' += minutos += ' minutos'}${segundos == 0 ? '' : segundos == 1 ? ' 1 segundo' : ' ' += segundos += ' segundos'}${miliss == 0 ? '' : miliss == 1 ? ' 1 mili' : ' ' += miliss += ' miliss'}${nanos == 0 ? '' : nanos == 1 ? ' 1 nano' : ' ' += nanos += ' nanos'}");
+		messages.put("br.com.anteros.bean.validation.constraints.DOMAIN.message","Endereço de domínio inválido {value}");
 
 	}
 

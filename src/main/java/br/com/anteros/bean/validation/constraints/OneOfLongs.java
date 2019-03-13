@@ -21,7 +21,7 @@ import br.com.anteros.validation.api.Payload;
 @Constraint(validatedBy = OneOfLongsValidator.class)
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 public @interface OneOfLongs {
-    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_LONGS}";
+    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_LONGS.message}";
 
     long[] value() default {};
 

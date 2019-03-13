@@ -21,7 +21,7 @@ import br.com.anteros.validation.api.Payload;
 @Constraint(validatedBy = OneOfDoublesValidator.class)
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 public @interface OneOfDoubles {
-    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_DOUBLES}";
+    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_DOUBLES.message}";
 
     double[] value() default {};
 

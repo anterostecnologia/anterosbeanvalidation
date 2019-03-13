@@ -24,7 +24,7 @@ import br.com.anteros.validation.api.Payload;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 public @interface Alphanumeric {
-    String message() default "{br.com.anteros.bean.validation.constraints.ALPHA_NUMERIC}";
+    String message() default "{br.com.anteros.bean.validation.constraints.ALPHA_NUMERIC.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

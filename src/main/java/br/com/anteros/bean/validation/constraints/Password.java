@@ -36,7 +36,7 @@ public @interface Password {
 
     int maxSize() default 32;
 
-    String message() default "{br.com.anteros.bean.validation.constraints.PASSWORD}";
+    String message() default "{br.com.anteros.bean.validation.constraints.PASSWORD.message}";
 
     Class<?>[] groups() default {};
 

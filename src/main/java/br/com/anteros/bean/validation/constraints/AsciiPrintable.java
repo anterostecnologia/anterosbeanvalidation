@@ -24,7 +24,7 @@ import br.com.anteros.validation.api.Payload;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 public @interface AsciiPrintable {
-    String message() default "{br.com.anteros.bean.validation.constraints.ASCII_PRINTABLE}";
+    String message() default "{br.com.anteros.bean.validation.constraints.ASCII_PRINTABLE.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

@@ -25,7 +25,7 @@ import br.com.anteros.validation.api.Payload;
 public @interface Before {
     String value();
 
-    String message() default "{br.com.anteros.bean.validation.constraints.BEFORE}";
+    String message() default "{br.com.anteros.bean.validation.constraints.BEFORE.message}";
 
     Class<?>[] groups() default {};
 

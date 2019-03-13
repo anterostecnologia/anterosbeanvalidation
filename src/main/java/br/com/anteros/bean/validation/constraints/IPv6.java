@@ -21,7 +21,7 @@ import br.com.anteros.validation.api.Payload;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 public @interface IPv6 {
-    String message() default "{br.com.anteros.bean.validation.constraints.IPV6}";
+    String message() default "{br.com.anteros.bean.validation.constraints.IPV6.message}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

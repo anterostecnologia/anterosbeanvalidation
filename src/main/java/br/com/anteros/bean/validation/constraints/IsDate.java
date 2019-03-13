@@ -23,7 +23,7 @@ import br.com.anteros.validation.api.Payload;
 public @interface IsDate {
     String value();
 
-    String message() default "{br.com.anteros.bean.validation.constraints.IS_DATE}";
+    String message() default "{br.com.anteros.bean.validation.constraints.IS_DATE.message}";
 
     Class<?>[] groups() default {};
 

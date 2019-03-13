@@ -23,7 +23,7 @@ import br.com.anteros.validation.api.Payload;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 @Retention(RUNTIME)
 public @interface JsAssert {
-    String message() default "{br.com.anteros.bean.validation.constraints.EXP_JS}";
+    String message() default "{br.com.anteros.bean.validation.constraints.EXP_JS.message}";
     String value() default "true";
     String attributeName() default "_";
     Class<?>[] groups() default {};

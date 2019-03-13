@@ -21,7 +21,7 @@ import br.com.anteros.validation.api.Payload;
 @Constraint(validatedBy = OneOfIntegersValidator.class)
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE})
 public @interface OneOfIntegers {
-    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_INTEGERS}";
+    String message() default "{br.com.anteros.bean.validation.constraints.ONE_OF_INTEGERS.message}";
 
     int[] value() default {};
 
