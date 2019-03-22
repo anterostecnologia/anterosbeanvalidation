@@ -33,7 +33,7 @@ public class AnterosValidationMessages_ptBR implements AnterosBundle {
 		messages.put("br.com.anteros.bean.validation.constraints.Email.message",
 				"Endere\u00E7o de e-mail inv\u00E1lido");
 		messages.put("br.com.anteros.bean.validation.constraints.Length.message",
-				"{label} tamanho deve estar entre {min} e {max}");
+				"{label} tamanho deve estar entre {min} e {max} caracteres");
 		messages.put("br.com.anteros.bean.validation.constraints.NotBlank.message",
 				"{label} n\u00E3o pode estar vazio");
 		messages.put("br.com.anteros.bean.validation.constraints.NotEmpty.message",

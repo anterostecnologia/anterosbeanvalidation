@@ -19,6 +19,7 @@ import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
+import br.com.anteros.bean.validation.constraints.validators.LengthValidator;
 import br.com.anteros.validation.api.Constraint;
 import br.com.anteros.validation.api.Payload;
 
@@ -36,7 +37,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * @author Hardy Ferentschik
  */
 @Documented
-@Constraint(validatedBy = { })
+@Constraint(validatedBy = {LengthValidator.class })
 @Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER })
 @Retention(RUNTIME)
 public @interface Length {
