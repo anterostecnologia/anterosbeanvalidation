@@ -30,6 +30,9 @@ public class NotEmptyValidatorForMap implements ConstraintValidator<NotEmpty, Ma
     }
 
     public boolean isValid(Map<?, ?> value, ConstraintValidatorContext context) {
-        return value == null || !value.isEmpty();
+    	if ( value == null ) {
+			return false;
+		}
+		return value.size() > 0;
     }
 }

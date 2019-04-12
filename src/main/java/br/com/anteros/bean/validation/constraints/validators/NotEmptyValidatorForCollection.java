@@ -30,6 +30,9 @@ public class NotEmptyValidatorForCollection implements ConstraintValidator<NotEm
     }
 
     public boolean isValid(Collection<?> value, ConstraintValidatorContext context) {
-        return value == null || !value.isEmpty();
+    	if ( value == null ) {
+			return false;
+		}
+		return value.size() > 0;
     }
 }
