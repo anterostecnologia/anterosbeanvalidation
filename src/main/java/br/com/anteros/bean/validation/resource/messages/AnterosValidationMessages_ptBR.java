@@ -108,6 +108,9 @@ public class AnterosValidationMessages_ptBR implements AnterosBundle {
 		messages.put("br.com.anteros.bean.validation.constraints.DURATION_MAX.message","deve ser menor que${inclusive == true ? ' ou igual a' : ''}${dias == 0 ? '' : dias == 1 ? ' 1 dia' : ' ' += dias += ' dias'}${horas == 0 ? '' : horas == 1 ? ' 1 hora' : ' ' += horas += ' horas'}${minutos == 0 ? '' : minutos == 1 ? ' 1 minuto' : ' ' += minutos += ' minutos'}${segundos == 0 ? '' : segundos == 1 ? ' 1 segundo' : ' ' += segundos += ' segundos'}${miliss == 0 ? '' : miliss == 1 ? ' 1 mili' : ' ' += miliss += ' miliss'}${nanos == 0 ? '' : nanos == 1 ? ' 1 nano' : ' ' += nanos += ' nanos'}");
 		messages.put("br.com.anteros.bean.validation.constraints.DURATION_MIN.message","deve ser maior que${inclusive == true ? ' ou igual a' : ''}${dias == 0 ? '' : dias == 1 ? ' 1 dia' : ' ' += dias += ' dias'}${horas == 0 ? '' : horas == 1 ? ' 1 hora' : ' ' += horas += ' horas'}${minutos == 0 ? '' : minutos == 1 ? ' 1 minuto' : ' ' += minutos += ' minutos'}${segundos == 0 ? '' : segundos == 1 ? ' 1 segundo' : ' ' += segundos += ' segundos'}${miliss == 0 ? '' : miliss == 1 ? ' 1 mili' : ' ' += miliss += ' miliss'}${nanos == 0 ? '' : nanos == 1 ? ' 1 nano' : ' ' += nanos += ' nanos'}");
 		messages.put("br.com.anteros.bean.validation.constraints.DOMAIN.message","Endereço de domínio inválido {value}");
+		
+		messages.put("br.com.anteros.bean.validation.constraints.NotNullIfAnotherFieldHasValue.message","{fieldName} deve ser preenchido se o campo {fieldName} for igual a {fieldValue}.");
+		messages.put("br.com.anteros.bean.validation.constraints.FieldMatch.message","O campo {first} deve ter o valor correspondente ao campo {second} ");
 
 	}
 
