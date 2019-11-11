@@ -1,6 +1,7 @@
 package br.com.anteros.bean.validation.constraints.validators;
 
 import br.com.anteros.bean.validation.constraints.NotNullIfAnotherFieldHasValue;
+import br.com.anteros.bean.validation.constraints.NullIfAnotherFieldHasValue;
 import br.com.anteros.core.metadata.beans.BeanDescriptor;
 import br.com.anteros.validation.api.ConstraintValidator;
 import br.com.anteros.validation.api.ConstraintValidatorContext;
@@ -8,19 +9,16 @@ import br.com.anteros.validation.api.ConstraintValidatorContext;
 /**
  * Implementation of {@link NotNullIfAnotherFieldHasValue} validator.
  */
-public class NotNullIfAnotherFieldHasValueValidator
-		implements ConstraintValidator<NotNullIfAnotherFieldHasValue, Object> {
+public class NullIfAnotherFieldHasValueValidator
+		implements ConstraintValidator<NullIfAnotherFieldHasValue, Object> {
 
 	private String fieldName;
-
-	private String expectedFieldValue;
 
 	private String[] dependFieldName;
 
 	@Override
-	public void initialize(NotNullIfAnotherFieldHasValue annotation) {
+	public void initialize(NullIfAnotherFieldHasValue annotation) {
 		fieldName = annotation.fieldName();
-		expectedFieldValue = annotation.fieldValue();
 		dependFieldName = annotation.dependFieldName();
 	}
 
@@ -35,7 +33,7 @@ public class NotNullIfAnotherFieldHasValueValidator
 		for (String dpFld : dependFieldName) {
 			Object dependFieldValue = descriptor.getValue(dpFld);
 
-			if (fieldValue != null && fieldValue.toString().equals(expectedFieldValue) && dependFieldValue == null) {
+			if (fieldValue != null && dependFieldValue != null) {
 				context.disableDefaultConstraintViolation();
 				context.buildConstraintViolationWithTemplate(context.getDefaultConstraintMessageTemplate())
 						.addNode(dpFld).addConstraintViolation();
