@@ -23,6 +23,8 @@ import br.com.anteros.validation.api.Payload;
 public @interface NullIfAnotherFieldHasValue {
 
   String fieldName();
+  
+  String fieldValue();
 
   String[] dependFieldName();
 
