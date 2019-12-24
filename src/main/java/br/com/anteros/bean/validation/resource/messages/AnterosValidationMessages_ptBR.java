@@ -115,6 +115,7 @@ public class AnterosValidationMessages_ptBR implements AnterosBundle {
 		messages.put("br.com.anteros.bean.validation.constraints.EqualsFields.message","O campo {baseField} deve ter o valor correspondente ao campo {matchField} ");
 		messages.put("br.com.anteros.bean.validation.constraints.UUID.message","{label} contém um UUID inválido.");
 		messages.put("br.com.anteros.bean.validation.constraints.fromToDate.message","{label} deve ser maior que {label}");
+		messages.put("br.com.anteros.bean.validation.constraints.fromToDatetime.message","{label} deve ser maior que {label}");
 		messages.put("br.com.anteros.bean.validation.constraints.greaterThan.message","{label} deve ser maior que {label}");
 		messages.put("br.com.anteros.bean.validation.constraints.greaterOrEqualsThan.message","{label} deve ser maior ou igual a {label}");
 		messages.put("br.com.anteros.bean.validation.constraints.lessThan.message","{label} deve ser menor que {label}");

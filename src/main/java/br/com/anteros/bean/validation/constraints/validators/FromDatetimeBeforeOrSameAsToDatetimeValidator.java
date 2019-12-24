@@ -1,8 +1,7 @@
 package br.com.anteros.bean.validation.constraints.validators;
 
 import java.lang.reflect.Field;
-import java.time.Instant;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -11,17 +10,17 @@ import br.com.anteros.core.utils.ReflectionUtils;
 import br.com.anteros.validation.api.ConstraintValidator;
 import br.com.anteros.validation.api.ConstraintValidatorContext;
  
-public class FromDateBeforeOrSameAsToDateValidator
+public class FromDatetimeBeforeOrSameAsToDatetimeValidator
         implements ConstraintValidator<FromDateBeforeOrSameAsToDate, Object> {
  
     private String fromDate;
  
     private String toDate;
     
-    private LocalDate convertToLocalDateViaMilisecond(Date dateToConvert) {
-        return Instant.ofEpochMilli(dateToConvert.getTime())
+    public LocalDateTime convertToLocalDateTimeViaInstant(Date dateToConvert) {
+        return dateToConvert.toInstant()
           .atZone(ZoneId.systemDefault())
-          .toLocalDate();
+          .toLocalDateTime();
     }
  
     @Override
@@ -35,12 +34,12 @@ public class FromDateBeforeOrSameAsToDateValidator
     	Object value1 = ReflectionUtils.getField(fromDateField, requestObject);
     	Object value2 = ReflectionUtils.getField(toDateField, requestObject);
     	
-    	LocalDate fromLocalDate = null;
-    	LocalDate toLocalDate = null;
+    	LocalDateTime fromLocalDate = null;
+    	LocalDateTime toLocalDate = null;
     	if (value1 != null)
-            fromLocalDate = (value1 instanceof LocalDate ? (LocalDate)value1: convertToLocalDateViaMilisecond((Date) value1));
+            fromLocalDate = (value1 instanceof LocalDateTime ? (LocalDateTime)value1: convertToLocalDateTimeViaInstant((Date) value1));
     	if (value2 != null)
-            toLocalDate = (value2 instanceof LocalDate ? (LocalDate)value2: convertToLocalDateViaMilisecond((Date) value2));
+            toLocalDate = (value2 instanceof LocalDateTime ? (LocalDateTime)value2: convertToLocalDateTimeViaInstant((Date) value2));
  
         if (fromLocalDate == null || toLocalDate == null) {
             return true;
@@ -48,7 +47,7 @@ public class FromDateBeforeOrSameAsToDateValidator
  
         constraintValidatorContext.disableDefaultConstraintViolation();
         constraintValidatorContext.buildConstraintViolationWithTemplate(
-                "{app.validation.constraints.fromDateSameOrBeforeToDate.msg}")
+                "{app.validation.constraints.fromDatetimeSameOrBeforeToDatetime.msg}")
                 .addNode(fromDate)
                 .addConstraintViolation();
  
