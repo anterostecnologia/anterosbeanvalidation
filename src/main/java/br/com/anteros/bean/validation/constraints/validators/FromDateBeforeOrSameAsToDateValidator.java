@@ -48,7 +48,7 @@ public class FromDateBeforeOrSameAsToDateValidator
  
         constraintValidatorContext.disableDefaultConstraintViolation();
         constraintValidatorContext.buildConstraintViolationWithTemplate(
-                "{app.validation.constraints.fromDateSameOrBeforeToDate.msg}")
+                "{br.com.anteros.bean.validation.constraints.fromToDate.message}")
                 .addNode(fromDate)
                 .addConstraintViolation();
  
